@@ -18,7 +18,8 @@
 		"zfcampus/zf-development-mode" : "^3.0",
 		"phpunit/phpunit" : "*",
 		"zendframework/zend-test" : "*",
-		"zendframework/zend-navigation" : "*"
+		"zendframework/zend-navigation" : "*",
+		"zendframework/zend-mvc-plugin-flashmessenger" : "*"
 	},
 	"autoload" : {
 		"psr-4" : {

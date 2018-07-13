@@ -26,6 +26,9 @@
     <body>
         <?= $this->navigation('default')->menu()->setPartial('partial/navigation.phtml'); ?>
         <div class="container">
+        <!-- Flash Messenger -->
+            <?php echo $this->partial('partial/flashmessenger.phtml'); ?>
+        	
             <?= $this->content ?>
             <hr>
             <footer>
