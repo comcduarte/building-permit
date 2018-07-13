@@ -19,11 +19,14 @@
 		"phpunit/phpunit" : "*",
 		"zendframework/zend-test" : "*",
 		"zendframework/zend-navigation" : "*",
-		"zendframework/zend-mvc-plugin-flashmessenger" : "*"
+		"zendframework/zend-mvc-plugin-flashmessenger" : "*",
+		"zendframework/zend-db" : "*",
+		"zendframework/zend-i18n" : "*"
 	},
 	"autoload" : {
 		"psr-4" : {
-			"Application\\" : "module/Application/src/"
+			"Application\\" : "module/Application/src/",
+			"Permit\\" : "module/Permit/src/"
 		}
 	},
 	"autoload-dev" : {
