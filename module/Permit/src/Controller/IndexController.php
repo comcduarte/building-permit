@@ -2,12 +2,64 @@
 namespace Permit\Controller;
 
 use Zend\Mvc\Controller\AbstractActionController;
-use Zend\View\Model\ViewModel;
+use Permit\Traits\AdapterTrait;
+use Permit\Model\Permit;
+use Zend\Db\Sql\Select;
+use Zend\Db\Sql\Sql;
+use Permit\Form\PermitForm;
 
 class IndexController extends AbstractActionController
 {
+    use AdapterTrait;
+    
     public function indexAction()
     {
-        return new ViewModel();
+        $permit = new Permit($this->adapter);
+        
+        $sql = new Sql($this->adapter);
+        
+        $select = new Select();
+        $select->from($permit->getTableName());
+        
+        $statement = $sql->prepareStatementForSqlObject($select);
+        
+        try {
+            $permits = $statement->execute();
+        } catch (\Exception $e) {
+            return $e;
+        }
+        
+        return [
+            'permits' => $permits,
+        ];
+    }
+    
+    public function createAction()
+    {
+        $form = new PermitForm();
+        
+        $request = $this->getRequest();
+        if ($request->isPost()) {
+            $permit = new Permit($this->adapter);
+            
+            $form->setInputFilter($permit->getInputFilter());
+            $form->setData($request->getPost());
+            
+            if ($form->isValid()) {
+                $permit->exchangeArray($form->getData());
+                
+                $permit->create();
+                return $this->redirect()->toRoute('permit');
+            }
+        }
+        
+        return [
+            'form' => $form,
+        ];
+    }
+    
+    public function readAction()
+    {
+        return $this->redirect()->toRoute('permit');
     }
 }

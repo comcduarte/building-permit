@@ -1,0 +1,17 @@
+<?php
+$title = "Create New Permit";
+$this->headtitle($title);
+?>
+<h1><?php echo $this->escapehtml($title); ?></h1>
+
+<?php 
+$form->setAttribute('action', $this->url('permit/default', array('action' => 'create')));
+$form->prepare();
+
+
+echo $this->form()->openTag($form);
+
+echo $this->formCollection($form);
+
+echo $this->form()->closeTag();
+?>

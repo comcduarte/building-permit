@@ -21,12 +21,17 @@
 		"zendframework/zend-navigation" : "*",
 		"zendframework/zend-mvc-plugin-flashmessenger" : "*",
 		"zendframework/zend-db" : "*",
-		"zendframework/zend-i18n" : "*"
+		"zendframework/zend-i18n" : "*",
+		"zendframework/zend-inputfilter" : "*",
+		"zendframework/zend-session" : "*",
+		"zendframework/zend-form" : "*",
+		"zendframework/zend-math" : "*"
 	},
 	"autoload" : {
 		"psr-4" : {
 			"Application\\" : "module/Application/src/",
-			"Permit\\" : "module/Permit/src/"
+			"Permit\\" : "module/Permit/src/",
+			"Uuid\\" : "module/Uuid/src/"
 		}
 	},
 	"autoload-dev" : {

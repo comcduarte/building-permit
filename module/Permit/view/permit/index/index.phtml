@@ -1,1 +1,30 @@
-Module: Permit >> Controller: Index >> Action: Index
+<div class="container">
+	<!-- Add News: WYSIWYG Edior -->
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Permit Number</th>
+				<th>First Name</th>
+				<th>Last Name</th>
+			</tr>
+		</thead>
+		<tbody>
+		<?php foreach ($permits as $permit) : ?>
+			<tr>
+				<td><a href=# id=<?=$permit['UUID']?>><?=$permit['PERMIT_NUMBER']?></a></td>
+				<td><?=$permit['APPLICANT_FNAME']?></td>
+				<td><?=$permit['APPLICANT_LNAME']?></td>
+				<td><?=$permit['APPLICANT_ADDR1']?></td>
+				<td><?=$permit['APPLICANT_ADDR2']?></td>
+				<td><?=$permit['APPLICANT_CITY']?></td>
+				<td><?=$permit['APPLICANT_STATE']?></td>
+				<td><?=$permit['APPLICANT_ZIP']?></td>
+				<td><?=$permit['APPLICANT_PHONE']?></td>
+				<td><?=$permit['APPLICANT_FAX']?></td>
+				<td><?=$permit['APPLICANT_EMAIL']?></td>
+			</tr>
+		<?php endforeach; ?>
+		</tbody>
+	</table>
+	<!-- / Add News: WYSIWYG Edior -->
+</div>

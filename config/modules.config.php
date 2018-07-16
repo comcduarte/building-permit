@@ -11,6 +11,10 @@
  * This should be an array of module namespaces used in the application.
  */
 return [
+    'Zend\Form',
+    'Zend\Hydrator',
+    'Zend\InputFilter',
+    'Zend\Filter',
     'Zend\I18n',
     'Zend\Db',
     'Zend\Mvc\Plugin\FlashMessenger',
@@ -20,4 +24,5 @@ return [
     'Zend\Validator',
     'Application',
     'Permit',
+    'Uuid',
 ];
