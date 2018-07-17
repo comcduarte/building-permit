@@ -21,7 +21,7 @@ return [
                     'default' => [
                         'type' => Segment::class,
                         'options' => [
-                            'route' => '/[:action]',
+                            'route' => '/[:action][/:uuid]',
                         ],
                         'defaults' => [],
                     ],

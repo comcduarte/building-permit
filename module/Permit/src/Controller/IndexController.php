@@ -62,4 +62,23 @@ class IndexController extends AbstractActionController
     {
         return $this->redirect()->toRoute('permit');
     }
+    
+    public function updateAction()
+    {
+        
+    }
+    
+    public function deleteAction()
+    {
+        $uuid = $this->params()->fromRoute('uuid', 0);
+        if (!$uuid) {
+            return $this->redirect()->toRoute('permit');
+        }
+        
+        $permit = new Permit($this->adapter);
+        $permit->read(['UUID' => $uuid]);
+        $permit->delete();
+        
+        return $this->redirect()->toRoute('permit');
+    }
 }

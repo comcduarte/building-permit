@@ -22,6 +22,7 @@
 				<td><?=$permit['APPLICANT_PHONE']?></td>
 				<td><?=$permit['APPLICANT_FAX']?></td>
 				<td><?=$permit['APPLICANT_EMAIL']?></td>
+				<td><a class="btn btn-danger" href=<?php echo $this->url('permit/default', ['action' => 'delete','uuid' => $permit['UUID']]); ?>>Delete</a></td>
 			</tr>
 		<?php endforeach; ?>
 		</tbody>
