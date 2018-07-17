@@ -11,7 +11,7 @@
 		<tbody>
 		<?php foreach ($permits as $permit) : ?>
 			<tr>
-				<td><a href=# id=<?=$permit['UUID']?>><?=$permit['PERMIT_NUMBER']?></a></td>
+				<td><a href=<?php echo $this->url('permit/default', ['action' => 'update','uuid' => $permit['UUID']]); ?>><?=$permit['PERMIT_NUMBER']?></a></td>
 				<td><?=$permit['APPLICANT_FNAME']?></td>
 				<td><?=$permit['APPLICANT_LNAME']?></td>
 				<td><?=$permit['APPLICANT_ADDR1']?></td>

@@ -19,7 +19,7 @@ class PermitObject implements InputFilterAwareInterface
     protected $inputFilter;
     protected $private_attributes;
     protected $public_attributes;
-    protected $primary_key = 'command_uuid';
+    protected $primary_key;
     
     public function __construct($dbAdapter = null)
     {
@@ -153,12 +153,11 @@ class PermitObject implements InputFilterAwareInterface
     {
         $sql = new Sql($this->dbAdapter);
         $values = $this->getArrayCopy();
-        $prikey = $this->primary_key;
         
         $update = new Update();
         $update->table($this->table);
         $update->set($values);
-        $update->where(array('{$this->prikey}' => $prikey));
+        $update->where([$this->primary_key => $values[$this->primary_key]]);
         
         $statement = $sql->prepareStatementForSqlObject($update);
         

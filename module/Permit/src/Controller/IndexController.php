@@ -37,6 +37,7 @@ class IndexController extends AbstractActionController
     public function createAction()
     {
         $form = new PermitForm();
+        $form->get('SUBMIT')->setAttribute('value', 'Create');
         
         $request = $this->getRequest();
         if ($request->isPost()) {
@@ -65,7 +66,35 @@ class IndexController extends AbstractActionController
     
     public function updateAction()
     {
+        $params = $this->params()->fromRoute();
+        $uuid = $this->params()->fromRoute('uuid',0);
+        if (!$uuid) {
+            return $this->redirect()->toRoute('permit');
+        }
         
+        $permit = new Permit($this->adapter);
+        $permit->read(['UUID'=>$uuid]);
+        
+        $form = new PermitForm();
+        $form->bind($permit);
+        $form->get('SUBMIT')->setAttribute('value', 'Update');
+        
+        $request = $this->getRequest();
+        if ($request->isPost()) {
+            $form->setInputFilter($permit->getInputFilter());
+            $form->setData($request->getPost());
+            
+            if ($form->isValid()) {
+                $permit->update();
+                return $this->redirect()->toRoute('permit');
+            }
+            
+        }
+        
+        return [
+            'uuid' => $uuid,
+            'form' => $form,
+        ];
     }
     
     public function deleteAction()
