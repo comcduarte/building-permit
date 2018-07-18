@@ -11,6 +11,7 @@ use Zend\Filter\StripTags;
 use Zend\InputFilter\InputFilter;
 use Zend\InputFilter\InputFilterAwareInterface;
 use Zend\InputFilter\InputFilterInterface;
+use Exception;
 
 class PermitObject implements InputFilterAwareInterface
 {
@@ -64,7 +65,7 @@ class PermitObject implements InputFilterAwareInterface
     
     public function setInputFilter(InputFilterInterface $inputFilter)
     {
-        throw new \Exception ("Not Used");
+        throw new Exception ("Not Used");
     }
     
     public function getInputFilter()
@@ -98,7 +99,7 @@ class PermitObject implements InputFilterAwareInterface
         
         try {
             $resultSet = $statement->execute();
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
             return $e;
         }
         
@@ -118,7 +119,7 @@ class PermitObject implements InputFilterAwareInterface
         
         try {
             $resultSet = $statement->execute();
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
             return $e;
         }
         return $this;
@@ -127,7 +128,7 @@ class PermitObject implements InputFilterAwareInterface
     /**
      * 
      * @param array $criteria
-     * @return \Exception|\Permit\Model\PermitObject
+     * @return Exception|\Permit\Model\PermitObject
      */
     public function read(Array $criteria)
     {
@@ -141,7 +142,7 @@ class PermitObject implements InputFilterAwareInterface
         
         try {
             $resultSet = $statement->execute();
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
             return $e;
         }
         
@@ -163,7 +164,7 @@ class PermitObject implements InputFilterAwareInterface
         
         try {
             $resultSet = $statement->execute();
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
             return $e;
         }
         return $this;
@@ -181,7 +182,7 @@ class PermitObject implements InputFilterAwareInterface
         
         try {
             $resultSet = $statement->execute();
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
             return $e;
         }
         return true;

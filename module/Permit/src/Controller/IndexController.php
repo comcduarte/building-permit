@@ -6,6 +6,7 @@ use Permit\Traits\AdapterTrait;
 use Permit\Model\Permit;
 use Zend\Db\Sql\Select;
 use Zend\Db\Sql\Sql;
+use Exception;
 use Permit\Form\PermitForm;
 
 class IndexController extends AbstractActionController
@@ -25,7 +26,7 @@ class IndexController extends AbstractActionController
         
         try {
             $permits = $statement->execute();
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
             return $e;
         }
         
