@@ -49,11 +49,6 @@ return [
                         'route' => 'permit/default',
                         'action' => 'create',
                     ],
-                    [
-                        'label' => 'Read Permit',
-                        'route' => 'permit/default',
-                        'action' => 'read',
-                    ],
                 ],
             ],
         ],
