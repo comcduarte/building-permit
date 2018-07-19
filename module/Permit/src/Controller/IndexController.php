@@ -4,9 +4,6 @@ namespace Permit\Controller;
 use Zend\Mvc\Controller\AbstractActionController;
 use Permit\Traits\AdapterTrait;
 use Permit\Model\Permit;
-use Zend\Db\Sql\Select;
-use Zend\Db\Sql\Sql;
-use Exception;
 use Permit\Form\PermitForm;
 
 class IndexController extends AbstractActionController
@@ -16,19 +13,7 @@ class IndexController extends AbstractActionController
     public function indexAction()
     {
         $permit = new Permit($this->adapter);
-        
-        $sql = new Sql($this->adapter);
-        
-        $select = new Select();
-        $select->from($permit->getTableName());
-        
-        $statement = $sql->prepareStatementForSqlObject($select);
-        
-        try {
-            $permits = $statement->execute();
-        } catch (Exception $e) {
-            return $e;
-        }
+        $permits = $permit->fetchAll();
         
         return [
             'permits' => $permits,
