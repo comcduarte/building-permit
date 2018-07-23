@@ -12,16 +12,14 @@
 		<?php foreach ($permits as $permit) : ?>
 			<tr>
 				<td><a href=<?php echo $this->url('permit/default', ['action' => 'update','uuid' => $permit['UUID']]); ?>><?=$permit['PERMIT_NUMBER']?></a></td>
-				<td><?=$permit['APPLICANT_FNAME']?></td>
-				<td><?=$permit['APPLICANT_LNAME']?></td>
-				<td><?=$permit['APPLICANT_ADDR1']?></td>
-				<td><?=$permit['APPLICANT_ADDR2']?></td>
-				<td><?=$permit['APPLICANT_CITY']?></td>
-				<td><?=$permit['APPLICANT_STATE']?></td>
-				<td><?=$permit['APPLICANT_ZIP']?></td>
-				<td><?=$permit['APPLICANT_PHONE']?></td>
-				<td><?=$permit['APPLICANT_FAX']?></td>
-				<td><?=$permit['APPLICANT_EMAIL']?></td>
+				<td><?=$permit['PERMIT_APPLICANT_NAME']?></td>
+				<td><?=$permit['APPLICANTS_ADDRESS']?></td>
+				<td><?=$permit['APPLICANTS_CITY']?></td>
+				<td><?=$permit['APPLICANTS_STATE']?></td>
+				<td><?=$permit['APPLICANTS_ZIP']?></td>
+				<td><?=$permit['APPLICANTS_PHONE']?></td>
+				<td><?=$permit['APPLICANTS_FAX']?></td>
+				<td><?=$permit['APPLICANTS_EMAIL']?></td>
 				<td><a class="btn btn-danger" href=<?php echo $this->url('permit/default', ['action' => 'delete','uuid' => $permit['UUID']]); ?>>Delete</a></td>
 			</tr>
 		<?php endforeach; ?>

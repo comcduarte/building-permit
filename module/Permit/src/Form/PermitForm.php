@@ -28,40 +28,123 @@ class PermitForm extends Form
             ],
         ]);
         
+        /**
+         * Residential/Commercial
+         */
         $this->add([
-            'name' => 'APPLICANT_FNAME',
-            'type' => Element\Text::class,
+            'name' => 'RESIDENTIAL_OR_COMMERCIAL',
+            'type' => Element\Select::class,
             'options' => [
-                'label' => 'First Name',
+                'label' => 'Residential or Commercial',
+                'value_options' => [
+                    'Residential' => 'Residential',
+                    'Commercial' => 'Commercial',
+                ],
+            ],
+        ]);
+        
+        /**
+         * Permits
+         */
+        $this->add([
+            'name' => 'BUILDING_PERMIT',
+            'type' => Element\Checkbox::class,
+            'options' => [
+                'label' => 'Building Permit',
+                'checked_value' => 1,
+                'unchecked_value' => 0,
             ],
         ]);
         
         $this->add([
-            'name' => 'APPLICANT_LNAME',
-            'type' => Element\Text::class,
+            'name' => 'ELECTRIC_PERMIT',
+            'type' => Element\Checkbox::class,
             'options' => [
-                'label' => 'Last Name',
+                'label' => 'Electric Permit',
+                'checked_value' => 1,
+                'unchecked_value' => 0,
             ],
         ]);
         
         $this->add([
-            'name' => 'APPLICANT_ADDR1',
-            'type' => Element\Text::class,
+            'name' => 'PLUMBING_PERMIT',
+            'type' => Element\Checkbox::class,
             'options' => [
-                'label' => 'Address 1',
+                'label' => 'Plumbing Permit',
+                'checked_value' => 1,
+                'unchecked_value' => 0,
             ],
         ]);
         
         $this->add([
-            'name' => 'APPLICANT_ADDR2',
-            'type' => Element\Text::class,
+            'name' => 'DEMOLITION_PERMIT',
+            'type' => Element\Checkbox::class,
             'options' => [
-                'label' => 'Address 2',
+                'label' => 'Demolition Permit',
+                'checked_value' => 1,
+                'unchecked_value' => 0,
             ],
         ]);
         
         $this->add([
-            'name' => 'APPLICANT_CITY',
+            'name' => 'HVAC_PERMIT',
+            'type' => Element\Checkbox::class,
+            'options' => [
+                'label' => 'HVAC Permit',
+                'checked_value' => 1,
+                'unchecked_value' => 0,
+            ],
+        ]);
+        
+        /**
+         * Permit Information
+         */
+        $this->add([
+            'name' => 'LOCATION_OF_PROPOSED_WORK',
+            'type' => Element\Text::class,
+            'options' => [
+                'label' => 'Location of Proposed Work',
+            ],
+        ]);
+        
+        $this->add([
+            'name' => 'PERMIT_DESCRIPTION',
+            'type' => Element\Text::class,
+            'options' => [
+                'label' => 'Permit Description',
+            ],
+        ]);
+        
+        $this->add([
+            'name' => 'NUMBER_OF_DWELLING_UNITS',
+            'type' => Element\Text::class,
+            'options' => [
+                'label' => 'Number of Dwelling Units',
+            ],
+        ]);
+        
+        
+        /**
+         * Applicant Information
+         */
+        $this->add([
+            'name' => 'PERMIT_APPLICANT_NAME',
+            'type' => Element\Text::class,
+            'options' => [
+                'label' => 'Permit Applicant Name',
+            ],
+        ]);
+        
+        $this->add([
+            'name' => 'APPLICANTS_ADDRESS',
+            'type' => Element\Text::class,
+            'options' => [
+                'label' => 'Applicants Address',
+            ],
+        ]);
+        
+        $this->add([
+            'name' => 'APPLICANTS_CITY',
             'type' => Element\Text::class,
             'options' => [
                 'label' => 'City',
@@ -69,7 +152,7 @@ class PermitForm extends Form
         ]);
         
         $this->add([
-            'name' => 'APPLICANT_STATE',
+            'name' => 'APPLICANTS_STATE',
             'type' => Element\Text::class,
             'options' => [
                 'label' => 'State',
@@ -77,34 +160,112 @@ class PermitForm extends Form
         ]);
         
         $this->add([
-            'name' => 'APPLICANT_ZIP',
+            'name' => 'APPLICANTS_ZIP',
             'type' => Element\Text::class,
             'options' => [
-                'label' => 'Postal Code',
+                'label' => 'Zip',
             ],
         ]);
         
         $this->add([
-            'name' => 'APPLICANT_PHONE',
+            'name' => 'APPLICANTS_PHONE',
             'type' => Element\Text::class,
             'options' => [
-                'label' => 'Phone',
+                'label' => 'Applicants Phone Number',
             ],
         ]);
         
         $this->add([
-            'name' => 'APPLICANT_FAX',
+            'name' => 'APPLICANTS_FAX',
             'type' => Element\Text::class,
             'options' => [
-                'label' => 'Fax',
+                'label' => 'Applicants Fax Number',
             ],
         ]);
         
         $this->add([
-            'name' => 'APPLICANT_EMAIL',
+            'name' => 'APPLICANTS_EMAIL',
             'type' => Element\Text::class,
             'options' => [
-                'label' => 'Email Address',
+                'label' => 'Applicants Email Address',
+            ],
+        ]);
+        
+        /**
+         * Owners Information
+         */
+        $this->add([
+            'name' => 'OWNER_OF_PROPERTY_NAME',
+            'type' => Element\Text::class,
+            'options' => [
+                'label' => 'Owner of Property Name',
+            ],
+        ]);
+        
+        $this->add([
+            'name' => 'OWNERS_ADDRESS',
+            'type' => Element\Text::class,
+            'options' => [
+                'label' => 'Owners Address',
+            ],
+        ]);
+        
+        $this->add([
+            'name' => 'OWNERS_CITY',
+            'type' => Element\Text::class,
+            'options' => [
+                'label' => 'City',
+            ],
+        ]);
+        
+        $this->add([
+            'name' => 'OWNERS_STATE',
+            'type' => Element\Text::class,
+            'options' => [
+                'label' => 'State',
+            ],
+        ]);
+        
+        $this->add([
+            'name' => 'OWNERS_ZIP',
+            'type' => Element\Text::class,
+            'options' => [
+                'label' => 'Zip',
+            ],
+        ]);
+        
+        /**
+         * Costs
+         */
+        $this->add([
+            'name' => 'ESTIMATED_COSTS',
+            'type' => Element\Text::class,
+            'options' => [
+                'label' => 'Estimated Costs',
+            ],
+        ]);
+        
+        $this->add([
+            'name' => 'PERMIT_FEE',
+            'type' => Element\Text::class,
+            'options' => [
+                'label' => 'Permit Fee',
+            ],
+        ]);
+        
+        $this->add([
+            'name' => 'CHECK_NUMBER',
+            'type' => Element\Text::class,
+            'options' => [
+                'label' => 'Check Number',
+            ],
+        ]);
+        
+        $this->add([
+            'name' => 'CONTRACTORS_LICENSE_NUMBER',
+            'type' => Element\Text::class,
+            'options' => [
+                'label' => 'Contractors License Number',
             ],
         ]);
         

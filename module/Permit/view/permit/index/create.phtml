@@ -7,11 +7,12 @@ $this->headtitle($title);
 <?php 
 $form->setAttribute('action', $this->url('permit/default', array('action' => 'create')));
 $form->prepare();
-
-
-echo $this->form()->openTag($form);
-
-echo $this->formCollection($form);
-
-echo $this->form()->closeTag();
 ?>
+
+<div class="container-fluid">
+<?php 
+echo $this->form()->openTag($form);
+echo $this->formCollection($form);
+echo $this->form()->closeTag(); 
+?>
+</div>
