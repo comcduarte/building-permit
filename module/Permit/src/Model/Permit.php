@@ -9,76 +9,62 @@ class Permit extends PermitObject
     /**
      * Residential or Commercial
      */
-//     public $PERMIT_DOMAIN;
+    public $RESIDENTIAL_OR_COMMERCIAL;
     
     /**
      * Building, Electric, Plumbing, HVAC, Demolition
      */
-//     public $PERMIT_TYPE;
-//     public $LOCATION;
+    public $BUILDING_PERMIT;
+    public $ELECTRIC_PERMIT;
+    public $PLUMBING_PERMIT;
+    public $HVAC_PERMIT;
+    public $DEMOLITION_PERMIT;
+    
+    public $LOCATION_OF_PROPOSED_WORK;
     
     /**
      * Applicant Information 
      */
-    public $APPLICANT_FNAME;
-    public $APPLICANT_LNAME;
-    public $APPLICANT_ADDR1;
-    public $APPLICANT_ADDR2;
-    public $APPLICANT_CITY;
-    public $APPLICANT_STATE;
-    public $APPLICANT_ZIP;
-    public $APPLICANT_PHONE;
-    public $APPLICANT_FAX;
-    public $APPLICANT_EMAIL;
+    public $PERMIT_APPLICANT_NAME;
+    public $APPLICANTS_ADDRESS;
+    public $APPLICANTS_CITY;
+    public $APPLICANTS_STATE;
+    public $APPLICANTS_ZIP;
+    public $APPLICANTS_PHONE;
+    public $APPLICANTS_FAX;
+    public $APPLICANTS_EMAIL;
     
     /**
      * Owner Information
      */
-//     public $OWNER_NAME;
-//     public $OWNER_ADDR;
-//     public $OWNER_CITY;
-//     public $OWNER_STATE;
-//     public $OWNER_ZIP;
-//     public $OWNER_PHONE;
-//     public $OWNER_FAX;
-//     public $OWNER_EMAIL;
+    public $OWNER_OF_PROPERTY_NAME;
+    public $OWNERS_ADDRESS;
+    public $OWNERS_CITY;
+    public $OWNERS_STATE;
+    public $OWNERS_ZIP;
     
     /**
      * Permit Information
      */
-//     public $PERMIT_DESC;
-//     public $PERMIT_NUM_UNITS;
-//     public $PERMIT_CONTRACT_LIC_NUM;
-//     public $PERMIT_EST_COSTS;
-//     public $PERMIT_FEES;
+    public $PERMIT_DESCRIPTION;
+    public $NUMBER_OF_DWELLING_UNITS;
+    public $CONTRACTORS_LICENSE_NUMBER;
+    public $ESTIMATED_COSTS;
+    public $PERMIT_FEE;
     
-//     public $CHECK_NUM;
-//     public $STATE_FEE;
-//     public $CITY_FEE;
-//     public $TOTAL_FEE;
-//     public $PAYMENT_DATE;
-//     public $APPLICATION_DATE;
-//     public $CREATION_DATE;
-//     public $MODIFIED_DATE;
+    public $CHECK_NUMBER;
+    public $STATE_FEE;
+    public $CITY_FEE;
+    public $TOTAL_FEE;
+    public $PAYMENT_DATE;
+    public $APPLICATION_DATE;
+    public $CREATION_DATE;
+    public $MODIFIED_DATE;
 
     public function __construct($dbAdapter = null)
     {
         parent::__construct($dbAdapter);
         $this->setTableName('permits');
-//         $this->public_attributes = [
-//             'UUID',
-//             'PERMIT_NUMBER',
-//             'APPLICANT_FNAME',
-//             'APPLICANT_LNAME',
-//             'APPLICANT_ADDR1',
-//             'APPLICANT_ADDR2',
-//             'APPLICANT_CITY',
-//             'APPLICANT_STATE',
-//             'APPLICANT_ZIP',
-//             'APPLICANT_PHONE',
-//             'APPLICANT_FAX',
-//             'APPLICANT_EMAIL',
-//         ];
         
         $this->primary_key = 'UUID';
     }
