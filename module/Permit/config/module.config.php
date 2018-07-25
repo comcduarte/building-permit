@@ -111,7 +111,7 @@ return [
                 'driver' => 'PDO',
                 'dsn' => 'mysql:host=it-webdb01.midnet.cityofmiddletown.com;dbname=building-permit',
                 'username' => 'building-permit',
-                'password' => 'permit-password',
+                'password' => 'bAtMDQVrMutljgxOOvii',
             ],
         ],
     ],
