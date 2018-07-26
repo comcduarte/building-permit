@@ -21,6 +21,7 @@ class PermitObject implements InputFilterAwareInterface
     protected $private_attributes;
     protected $public_attributes;
     protected $primary_key;
+    protected $required;
     
     public function __construct($dbAdapter = null)
     {
@@ -33,6 +34,7 @@ class PermitObject implements InputFilterAwareInterface
             'private_attributes',
             'public_attributes',
             'primary_key',
+            'required',
         ];
         
         $this->public_attributes = array_diff(array_keys(get_object_vars($this)), $this->private_attributes);
@@ -70,13 +72,17 @@ class PermitObject implements InputFilterAwareInterface
     
     public function getInputFilter()
     {
+        if (!$this->required) {
+            throw new Exception("Set default required state");
+        }
+        
         if (!$this->inputFilter) {
             $inputFilter = new InputFilter();
         
             foreach ($this->public_attributes as $var) {
                 $inputFilter->add([
                     'name' => $var,
-                    'required' => false,
+                    'required' => $this->required,
                     'filters' => [
                         ['name' => StripTags::class],
                         ['name' => StringTrim::class],

@@ -23,7 +23,6 @@ class IndexController extends AbstractActionController
     public function createAction()
     {
         $form = new PermitForm();
-        $form->get('SUBMIT')->setAttribute('value', 'Create');
         
         $request = $this->getRequest();
         if ($request->isPost()) {

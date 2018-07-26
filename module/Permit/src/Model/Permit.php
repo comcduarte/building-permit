@@ -1,6 +1,12 @@
 <?php 
 namespace Permit\Model;
 
+use Zend\Filter\StringTrim;
+use Zend\Filter\StripTags;
+use Zend\Validator\Digits;
+use Zend\Validator\EmailAddress;
+use Zend\Validator\Uuid;
+
 class Permit extends PermitObject
 {
     public $UUID;
@@ -18,7 +24,7 @@ class Permit extends PermitObject
     public $ELECTRIC_PERMIT;
     public $PLUMBING_PERMIT;
     public $HVAC_PERMIT;
-    public $DEMOLITION_PERMIT;
+//     public $DEMOLITION_PERMIT;
     
     public $LOCATION_OF_PROPOSED_WORK;
     
@@ -47,7 +53,7 @@ class Permit extends PermitObject
      * Permit Information
      */
     public $PERMIT_DESCRIPTION;
-    public $NUMBER_OF_DWELLING_UNITS;
+//     public $NUMBER_OF_DWELLING_UNITS;
     public $CONTRACTORS_LICENSE_NUMBER;
     public $ESTIMATED_COSTS;
     public $PERMIT_FEE;
@@ -67,5 +73,79 @@ class Permit extends PermitObject
         $this->setTableName('permits');
         
         $this->primary_key = 'UUID';
+        $this->required = TRUE;
+    }
+    
+    public function getInputFilter()
+    {
+        /**
+         * Parent function set all fields to default required state
+         * @var \Zend\InputFilter\InputFilter $inputFilter
+         */
+        $inputFilter = parent::getInputFilter();
+        
+        /**
+         * Following array is to quickly set certain fields to alternate
+         * required.
+         */
+        $aryOptional = [
+            'CHECK_NUMBER',
+            'CONTRACTORS_LICENSE_NUMBER',
+        ];
+        
+        foreach ($aryOptional as $var) {
+            $inputFilter->add([
+                'name' => $var,
+                'required' => FALSE,
+                'filters' => [
+                    ['name' => StripTags::class],
+                    ['name' => StringTrim::class],
+                ],
+            ]);
+        }
+        
+        /**
+         * Further customization required for indiviual validators.
+         */
+        $inputFilter->add([
+            'name' => 'UUID',
+            'validators' => [
+                [
+                    'name' => Uuid::class,
+                ],
+            ],
+        ]);
+        
+        $inputFilter->add([
+            'name' => 'APPLICANTS_PHONE',
+            'validators' => [
+                ['name' => Digits::class,],
+            ],
+        ]);
+        
+        $inputFilter->add([
+            'name' => 'APPLICANTS_FAX',
+            'required' => FALSE,
+            'validators' => [
+                ['name' => Digits::class,],
+            ],
+        ]);
+        
+        $inputFilter->add([
+            'name' => 'APPLICANTS_EMAIL',
+            'validators' => [
+                ['name' => EmailAddress::class,],
+            ],
+        ]);
+        
+        $inputFilter->add([
+            'name' => 'NUMBER_OF_DWELLING_UNITS',
+            'validators' => [
+                ['name' => Digits::class,],
+            ],
+        ]);
+        
+        $this->inputFilter = $inputFilter;
+        return $this->inputFilter;
     }
 }
