@@ -62,12 +62,24 @@ return [
                     ],
                 ],
             ],
+            'download' => [
+                'type' => Literal::class,
+                'options' => [
+                    'route' => '/download',
+                    'defaults' => [
+                        'controller' => Controller\DownloadController::class,
+                        'action' => 'index',
+                    ],
+                ],
+                'may_terminate' => TRUE,
+            ],
         ],
     ],
     'controllers' => [
         'factories' => [
             Controller\IndexController::class => Controller\Factory\IndexControllerFactory::class,
             Controller\ConfigController::class => Controller\Factory\ConfigControllerFactory::class,
+            Controller\DownloadController::class => Controller\Factory\DownloadControllerFactory::class,
         ],
     ],
     'navigation' => [
@@ -102,6 +114,10 @@ return [
                         'action' => 'drop',
                     ],
                 ],
+            ],
+            [
+                'label' => 'Downloads',
+                'route' => 'download',
             ],
         ],
     ],
