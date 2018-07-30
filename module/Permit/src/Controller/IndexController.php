@@ -5,6 +5,7 @@ use Zend\Mvc\Controller\AbstractActionController;
 use Permit\Traits\AdapterTrait;
 use Permit\Model\Permit;
 use Permit\Form\PermitForm;
+use Zend\View\Model\ViewModel;
 
 class IndexController extends AbstractActionController
 {
@@ -35,7 +36,7 @@ class IndexController extends AbstractActionController
                 $permit->exchangeArray($form->getData());
                 
                 $permit->create();
-                return $this->redirect()->toRoute('permit');
+                return $this->redirect()->toRoute('permit/default', ['action' => 'receipt', 'uuid' => $permit->UUID] );
             }
         }
         
@@ -94,5 +95,16 @@ class IndexController extends AbstractActionController
         $permit->delete();
         
         return $this->redirect()->toRoute('permit');
+    }
+    
+    public function receiptAction()
+    {
+        $uuid = $this->params()->fromRoute('uuid',0);
+        $permit = new Permit($this->adapter);
+        $permit->read(['UUID'=>$uuid]);
+        
+        return new ViewModel([
+            'permit' => $permit,
+        ]);
     }
 }

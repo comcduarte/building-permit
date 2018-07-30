@@ -13,3 +13,5 @@ echo $this->form()->openTag($form);
 echo $this->formcollection($form);
 echo $this->form()->closeTag();
 ?>
+
+<a href="<?=$this->url('permit/default', ['action' => 'receipt', 'uuid' => $this->uuid])?>" class="btn btn-primary">View Receipt</a>
