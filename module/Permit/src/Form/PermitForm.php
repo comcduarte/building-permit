@@ -57,8 +57,6 @@ class PermitForm extends Form
             'type' => Element\Checkbox::class,
             'options' => [
                 'label' => 'Building Permit',
-                'checked_value' => 1,
-                'unchecked_value' => 0,
             ],
             'attributes' => [
                 'class' => 'form-control',
@@ -71,8 +69,6 @@ class PermitForm extends Form
             'type' => Element\Checkbox::class,
             'options' => [
                 'label' => 'Electric Permit',
-                'checked_value' => 1,
-                'unchecked_value' => 0,
             ],
             'attributes' => [
                 'class' => 'form-control',
@@ -85,8 +81,6 @@ class PermitForm extends Form
             'type' => Element\Checkbox::class,
             'options' => [
                 'label' => 'Plumbing Permit',
-                'checked_value' => 1,
-                'unchecked_value' => 0,
             ],
             'attributes' => [
                 'class' => 'form-control',
@@ -113,8 +107,6 @@ class PermitForm extends Form
             'type' => Element\Checkbox::class,
             'options' => [
                 'label' => 'HVAC Permit',
-                'checked_value' => 1,
-                'unchecked_value' => 0,
             ],
             'attributes' => [
                 'class' => 'form-control',
@@ -280,7 +272,7 @@ class PermitForm extends Form
         
         $this->add([
             'name' => 'APPLICANTS_PHONE',
-            'type' => Element\Text::class,
+            'type' => Element\Tel::class,
             'options' => [
                 'label' => 'Applicants Phone Number',
             ],
@@ -292,7 +284,7 @@ class PermitForm extends Form
         
         $this->add([
             'name' => 'APPLICANTS_FAX',
-            'type' => Element\Text::class,
+            'type' => Element\Tel::class,
             'options' => [
                 'label' => 'Applicants Fax Number',
             ],
@@ -304,7 +296,7 @@ class PermitForm extends Form
         
         $this->add([
             'name' => 'APPLICANTS_EMAIL',
-            'type' => Element\Text::class,
+            'type' => Element\Email::class,
             'options' => [
                 'label' => 'Applicants Email Address',
             ],
@@ -454,6 +446,7 @@ class PermitForm extends Form
             'attributes' => [
                 'class' => 'form-control',
                 'id' => 'PERMIT_FEE',
+                'readonly' => TRUE,
             ],
         ]);
         

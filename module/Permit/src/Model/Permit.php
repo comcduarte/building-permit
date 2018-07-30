@@ -91,6 +91,15 @@ class Permit extends PermitObject
         $aryOptional = [
             'CHECK_NUMBER',
             'CONTRACTORS_LICENSE_NUMBER',
+            'PERMIT_FEE',
+            
+            'STATE_FEE',
+            'CITY_FEE',
+            'TOTAL_FEE',
+            'PAYMENT_DATE',
+            'APPLICATION_DATE',
+            'CREATION_DATE',
+            'MODIFIED_DATE',
         ];
         
         foreach ($aryOptional as $var) {
@@ -135,13 +144,6 @@ class Permit extends PermitObject
             'name' => 'APPLICANTS_EMAIL',
             'validators' => [
                 ['name' => EmailAddress::class,],
-            ],
-        ]);
-        
-        $inputFilter->add([
-            'name' => 'NUMBER_OF_DWELLING_UNITS',
-            'validators' => [
-                ['name' => Digits::class,],
             ],
         ]);
         

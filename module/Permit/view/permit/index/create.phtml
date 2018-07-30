@@ -8,18 +8,12 @@ $this->headtitle($title);
 	<h1 class="display-4"><?php echo $this->escapehtml($title); ?></h1>
 	<p class="lead">Instructions for online permitting applications</p>
 	<ol>
-		<li>Click on the link that says Owner's Consent Form and fill it out.
-			Email this form to <a href=mailto:Ashley.Berent@MiddletownCT.Gov>Ashley.Berent@MiddletownCT.Gov</a>.
-		</li>
-		<li>Fill out the boxes on the application and click Save Record once
-			completed.</li>
-		<li>Email a picture of your contractor's license and a copy of your
-			insurance to <a href=mailto:Ashley.Berent@MiddletownCT.Gov>Ashley.Berent@MiddletownCT.Gov</a>.
-		</li>
-		<li>If you have any questions, please contact the office at (860)
-			638-4870.</li>
-		<li>Other paperwork, plans or specs may be required by the Department.
-			Please ensure a valid email address and phone number is provided.</li>
+        <li>Select type of permit and fill out all boxes of application (if larger job, GC&#39;s or property owners may pull a &#39;blanket permit&#39; and more than field may be selected).</li>
+        <li>Permit fee will generate after estimated cost is inputted (Permit fees are based on the estimated value of the work being done. This includes labor and materials. If you are not paying for one or both of these items a fair value is still required.) Please mail in or drop off permit fee *Checks Only* made out to &#39;The City of Middletown&#39; - permits will not be processed until full payment is received.</li> 
+        <li>If you are a contractor or someone besides the property owner click on <?= $this->url()?> Link and have it signed by the owner of the property.  Email form to <a href="mailto:Ashley.Berent@MiddletownCT.Gov">Ashley.Berent@MiddletownCT.Gov</a>.</li>
+        <li>Contractors email copy of valid contractor&#39;s license &amp; certificate of liability insurance to <a href="mailto:Ashley.Berent@MiddletownCT.Gov">Ashley.Berent@MiddletownCT.Gov</a> (if Sole Proprietor a 7B form will be required).</li>
+        <li>Plans, specs or other paperwork may be required based on proposed job.  Please ensure a valid email address and phone number is provided so this information can be requested if needed. (Informational documents are available on main Building Permit Page).</li>
+        <li>If you have any questions please contact the office at (860) 638-4870 or email <a href="mailto:Ashley.Berent@MiddletownCT.Gov">Ashley.Berent@MiddletownCT.Gov</a>.</li>
 	</ol>
 </div>
 
@@ -53,9 +47,9 @@ foreach ($aryPermits as $permit) :
 ?>
 		<div class="col-sm-4">
 			<?= $this->formElementErrors($permit); ?>
-			<div class="input-group mb-3">
+			<div class="input-group mb-3" style="width: 100%">
 				<div class="input-group-prepend">
-					<div class="input-group-text">
+					<div class="input-group-text" style="width: 40px">
 						<?= $this->formCheckbox($permit); ?>
 					</div>
 				</div>
@@ -143,7 +137,7 @@ $field = $form->get('RESIDENTIAL_OR_COMMERCIAL');
 			<?= $this->formRow($field); ?>
     	</div>
     	<?php $field = $form->get('PERMIT_DESCRIPTION'); ?>
-        <div class="form-group h-75">
+        <div class="form-group">
         	<?= $this->formRow($field); ?>
         </div>
     </div>
@@ -151,9 +145,11 @@ $field = $form->get('RESIDENTIAL_OR_COMMERCIAL');
 echo '</div>'; //-- END PERMIT INFO ROW --//
 ?>
 
-<div class="form-group">
-	<?= $this->formRow($form->get('SECURITY')); ?>
-	<?= $this->formRow($form->get('SUBMIT')); ?>
+<div class="row">
+	<div class="col-sm-12">
+    	<?= $this->formRow($form->get('SECURITY')); ?>
+    	<?= $this->formRow($form->get('SUBMIT')); ?>
+	</div>
 </div>
 
 
