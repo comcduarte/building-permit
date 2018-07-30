@@ -72,6 +72,16 @@ return [
                     ],
                 ],
                 'may_terminate' => TRUE,
+                'child_routes' => [
+                    'default' => [
+                        'type' => Segment::class,
+                        'options' => [
+                            'route' => '/[:action][/:filename]',
+                        ],
+                        'defaults' => [],
+                    ],
+                    
+                ],
             ],
         ],
     ],
@@ -118,6 +128,16 @@ return [
             [
                 'label' => 'Downloads',
                 'route' => 'download',
+                'pages' => [
+                    [
+                        'label' => 'Download Consent Form',
+                        'route' => 'download/default',
+                        'action' => 'pdf',
+                        'params' => [
+                            'filename' => 'consent_form',
+                        ],
+                    ],
+                ],
             ],
         ],
     ],
