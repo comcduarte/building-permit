@@ -31,12 +31,6 @@ div.container a.navbar-brand>img {
 	margin-top: -2px;
 }
 
-/**
- * Stylize ElementErrors
- */
-div.form-group input.input-error ul li {
-	color: Red;
-}
 
 /**
  * Below is used to highlight required/validated fields in the forms

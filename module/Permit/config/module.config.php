@@ -97,6 +97,7 @@ return [
             [
                 'label' => 'Permits',
                 'route' => 'permit',
+                'order' => 100,
                 'pages' => [
                     [
                         'label' => 'List Permits',
@@ -112,6 +113,7 @@ return [
             [
                 'label' => 'Config',
                 'route' => 'config',
+                'order' => 300,
                 'pages' => [
                     [
                         'label' => 'Create Database Table',
@@ -128,6 +130,7 @@ return [
             [
                 'label' => 'Downloads',
                 'route' => 'download',
+                'order' => 200,
                 'pages' => [
                     [
                         'label' => 'Download Consent Form',
