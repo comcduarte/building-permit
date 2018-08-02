@@ -3,7 +3,6 @@ namespace Permit\Model;
 
 use Zend\Filter\StringTrim;
 use Zend\Filter\StripTags;
-use Zend\Validator\Digits;
 use Zend\Validator\EmailAddress;
 use Zend\Validator\Uuid;
 
@@ -89,6 +88,7 @@ class Permit extends PermitObject
          * required.
          */
         $aryOptional = [
+            'APPLICANTS_FAX',
             'CHECK_NUMBER',
             'CONTRACTORS_LICENSE_NUMBER',
             'PERMIT_FEE',
@@ -122,21 +122,6 @@ class Permit extends PermitObject
                 [
                     'name' => Uuid::class,
                 ],
-            ],
-        ]);
-        
-        $inputFilter->add([
-            'name' => 'APPLICANTS_PHONE',
-            'validators' => [
-                ['name' => Digits::class,],
-            ],
-        ]);
-        
-        $inputFilter->add([
-            'name' => 'APPLICANTS_FAX',
-            'required' => FALSE,
-            'validators' => [
-                ['name' => Digits::class,],
             ],
         ]);
         

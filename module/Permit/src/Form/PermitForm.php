@@ -88,20 +88,6 @@ class PermitForm extends Form
             ],
         ]);
         
-//         $this->add([
-//             'name' => 'DEMOLITION_PERMIT',
-//             'type' => Element\Checkbox::class,
-//             'options' => [
-//                 'label' => 'Demolition Permit',
-//                 'checked_value' => 1,
-//                 'unchecked_value' => 0,
-//             ],
-//             'attributes' => [
-//                 'class' => 'form-control',
-//                 'id' => 'DEMOLITION_PERMIT',
-//             ],
-//         ]);
-        
         $this->add([
             'name' => 'HVAC_PERMIT',
             'type' => Element\Checkbox::class,
@@ -126,6 +112,8 @@ class PermitForm extends Form
             'attributes' => [
                 'class' => 'form-control',
                 'id' => 'LOCATION_OF_PROPOSED_WORK',
+                'required' => 'true',
+                'placeholder' => 'Basement, Patio, Addition, etc.',
             ],
         ]);
         
@@ -138,22 +126,11 @@ class PermitForm extends Form
             'attributes' => [
                 'class' => 'form-control h-100',
                 'id' => 'PERMIT_DESCRIPTION',
+                'required' => 'true',
+                'placeholder' => 'Please describe the work being performed.',
             ],
         ]);
-        
-//         $this->add([
-//             'name' => 'NUMBER_OF_DWELLING_UNITS',
-//             'type' => Element\Text::class,
-//             'options' => [
-//                 'label' => 'Number of Dwelling Units',
-//             ],
-//             'attributes' => [
-//                 'class' => 'form-control',
-//                 'id' => 'NUMBER_OF_DWELLING_UNITS',
-//             ],
-//         ]);
-        
-        
+
         /**
          * Applicant Information
          */
@@ -164,8 +141,10 @@ class PermitForm extends Form
                 'label' => 'Permit Applicant Name',
             ],
             'attributes' => [
-                'class' => 'form-control',
+                'class' => 'form-control required',
                 'id' => 'PERMIT_APPLICANT_NAME',
+                'required' => 'true',
+                'placeholder' => 'Full Name',
             ],
         ]);
         
@@ -178,6 +157,8 @@ class PermitForm extends Form
             'attributes' => [
                 'class' => 'form-control',
                 'id' => 'APPLICANTS_ADDRESS',
+                'required' => 'true',
+                'placeholder' => 'Street Address',
             ],
         ]);
         
@@ -190,6 +171,8 @@ class PermitForm extends Form
             'attributes' => [
                 'class' => 'form-control',
                 'id' => 'APPLICANTS_CITY',
+                'required' => 'true',
+                'placeholder' => 'City',
             ],
         ]);
         
@@ -198,6 +181,7 @@ class PermitForm extends Form
             'type' => Element\Select::class,
             'options' => [
                 'label' => 'State',
+                'empty_option' => 'Please select a state',
                 'value_options' => [
                     'AL' => 'Alabama',
                     'AK' => 'Alaska',
@@ -255,6 +239,7 @@ class PermitForm extends Form
             'attributes' => [
                 'class' => 'form-control',
                 'id' => 'APPLICANTS_STATE',
+                'required' => 'true',
             ],
         ]);
         
@@ -267,6 +252,8 @@ class PermitForm extends Form
             'attributes' => [
                 'class' => 'form-control',
                 'id' => 'APPLICANTS_ZIP',
+                'required' => 'true',
+                'placeholder' => '#####',
             ],
         ]);
         
@@ -279,6 +266,8 @@ class PermitForm extends Form
             'attributes' => [
                 'class' => 'form-control',
                 'id' => 'APPLICANTS_PHONE',
+                'required' => 'true',
+                'placeholder' => '###-###-####',
             ],
         ]);
         
@@ -291,6 +280,7 @@ class PermitForm extends Form
             'attributes' => [
                 'class' => 'form-control',
                 'id' => 'APPLICANTS_FAX',
+                'placeholder' => '###-###-####',
             ],
         ]);
         
@@ -303,6 +293,8 @@ class PermitForm extends Form
             'attributes' => [
                 'class' => 'form-control',
                 'id' => 'APPLICANTS_EMAIL',
+                'required' => 'true',
+                'placeholder' => 'name@domain.com',
             ],
         ]);
         
@@ -318,6 +310,8 @@ class PermitForm extends Form
             'attributes' => [
                 'class' => 'form-control',
                 'id' => 'OWNER_OF_PROPERTY_NAME',
+                'required' => 'true',
+                'placeholder' => 'Full Name',
             ],
         ]);
         
@@ -330,6 +324,8 @@ class PermitForm extends Form
             'attributes' => [
                 'class' => 'form-control',
                 'id' => 'OWNERS_ADDRESS',
+                'required' => 'true',
+                'placeholder' => 'Street Address',
             ],
         ]);
         
@@ -342,6 +338,8 @@ class PermitForm extends Form
             'attributes' => [
                 'class' => 'form-control',
                 'id' => 'OWNERS_CITY',
+                'required' => 'true',
+                'placeholder' => 'City',
             ],
         ]);
         
@@ -350,6 +348,7 @@ class PermitForm extends Form
             'type' => Element\Select::class,
             'options' => [
                 'label' => 'State',
+                'empty_option' => 'Please select a state',
                 'value_options' => [
                     'AL' => 'Alabama',
                     'AK' => 'Alaska',
@@ -407,6 +406,7 @@ class PermitForm extends Form
             'attributes' => [
                 'class' => 'form-control',
                 'id' => 'OWNERS_STATE',
+                'required' => 'true',
             ],
         ]);
         
@@ -419,6 +419,8 @@ class PermitForm extends Form
             'attributes' => [
                 'class' => 'form-control',
                 'id' => 'OWNERS_ZIP',
+                'required' => 'true',
+                'placeholder' => '#####',
             ],
         ]);
         
@@ -434,6 +436,8 @@ class PermitForm extends Form
             'attributes' => [
                 'class' => 'form-control',
                 'id' => 'ESTIMATED_COSTS',
+                'required' => 'true',
+                'placeholder' => '####.##',
             ],
         ]);
         
@@ -459,6 +463,7 @@ class PermitForm extends Form
             'attributes' => [
                 'class' => 'form-control',
                 'id' => 'CHECK_NUMBER',
+                'placeholder' => '####',
             ],
         ]);
         
