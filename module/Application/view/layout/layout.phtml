@@ -3,7 +3,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <?= $this->headTitle('Skeleton Application')->setSeparator(' - ')->setAutoEscape(false) ?>
+        <?= $this->headTitle('Building Permit')->setSeparator(' - ')->setAutoEscape(false) ?>
 
         <?= $this->headMeta()
             ->appendName('viewport', 'width=device-width, initial-scale=1.0')
@@ -11,7 +11,7 @@
         ?>
 
         <!-- Le styles -->
-        <?= $this->headLink(['rel' => 'shortcut icon', 'type' => 'image/vnd.microsoft.icon', 'href' => $this->basePath() . '/img/favicon.ico'])
+        <?= $this->headLink(['rel' => 'shortcut icon', 'type' => 'image/vnd.microsoft.icon', 'href' => $this->basePath() . '/img/cityseal_S7Z_icon.ico'])
             ->prependStylesheet($this->basePath('css/style.css'))
             ->prependStylesheet($this->basePath('css/bootstrap-theme.min.css'))
             ->prependStylesheet($this->basePath('css/bootstrap.min.css'))
@@ -34,7 +34,7 @@
             <?= $this->content ?>
             <hr>
             <footer>
-                <p>&copy; 2005 - <?= date('Y') ?> by The City of Middletown. All rights reserved.</p>
+                <p>&copy; 2017 - <?= date('Y') ?> by The City of Middletown. All rights reserved.</p>
             </footer>
         </div>
         <?= $this->inlineScript() ?>
