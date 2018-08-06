@@ -37,37 +37,19 @@ div.container a.navbar-brand>img {
  * by putting a small green/red/grey border color on the left of the
  * input field.
  */
-form input:optional {
+form input:optional, select:optional, textarea:optional {
 	border-left: 3px solid;
 	border-radius: 5px;
 	border-left-color: #999;
 }
 
-form input:required {
+form input:required, select:required, textarea:required {
 	border-left: 3px solid;
 	border-radius: 5px;
 	border-left-color: palegreen;
 }
 
-form input:invalid {
-	border-left: 3px solid;
-	border-radius: 5px;
-	border-left-color: salmon;
-}
-
-form textarea:optional {
-	border-left: 3px solid;
-	border-radius: 5px;
-	border-left-color: #999;
-}
-
-form textarea:required {
-	border-left: 3px solid;
-	border-radius: 5px;
-	border-left-color: palegreen;
-}
-
-form textarea:invalid {
+form input:invalid, select:invalid, textarea:invalid {
 	border-left: 3px solid;
 	border-radius: 5px;
 	border-left-color: salmon;

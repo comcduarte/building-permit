@@ -26,6 +26,7 @@ echo $this->form()->openTag($form);
 // echo $this->formCollection($form);
 echo $this->formRow($form->get('UUID'));
 echo $this->formRow($form->get('PERMIT_NUMBER'));
+echo $this->formRow($form->get('CREATION_DATE'));
 
 /**
  * Display Permit Checkboxes
@@ -110,8 +111,7 @@ echo '<div class="row"><div class="col-sm-6">';
 
 $aryPermit[] = $form->get('LOCATION_OF_PROPOSED_WORK');
 // $aryPermit[] = $form->get('NUMBER_OF_DWELLING_UNITS');
-$aryPermit[] = $form->get('ESTIMATED_COSTS');
-$aryPermit[] = $form->get('PERMIT_FEE');
+
 $aryPermit[] = $form->get('CHECK_NUMBER');
 $aryPermit[] = $form->get('CONTRACTORS_LICENSE_NUMBER');
 
@@ -122,6 +122,31 @@ foreach ($aryPermit as $field) :
 </div>
 <?php 
 endforeach;
+
+/**
+ * Display monetary fields
+ */
+$aryPermit = null;
+$aryPermit[] = $form->get('ESTIMATED_COSTS');
+$aryPermit[] = $form->get('PERMIT_FEE');
+foreach ($aryPermit as $field) :
+?>
+	<label for="<?=$field->getName();?>"><?= $field->getOption('label'); ?></label>	
+	<?= $this->formElementErrors($field); ?>
+	<div class="input-group mb-3">
+		<div class="input-group-prepend">
+			<span class="input-group-text">$</span>
+		</div>
+		<?= $this->formInput($field); ?>
+	</div>
+	<?php 
+endforeach;
+
+
+
+
+
+
 echo '</div>'; //-- END PERMIT COLS --//
 
 $field = $form->get('RESIDENTIAL_OR_COMMERCIAL');

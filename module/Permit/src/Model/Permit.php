@@ -69,7 +69,7 @@ class Permit extends PermitObject
     public function __construct($dbAdapter = null)
     {
         parent::__construct($dbAdapter);
-        $this->setTableName('permits');
+        $this->setTableName('tbl_Permits');
         
         $this->primary_key = 'UUID';
         $this->required = TRUE;

@@ -22,6 +22,15 @@ class PermitForm extends Form
         ]);
         
         $this->add([
+            'name' => 'CREATION_DATE',
+            'type' => Element\Hidden::class,
+            'attributes' => [
+                'value' => '2018-01-01',
+                'id' => 'CREATION_DATE',
+            ],
+        ]);
+       
+        $this->add([
             'name' => 'PERMIT_NUMBER',
             'type' => Element\Hidden::class,
             'attributes' => [
@@ -57,6 +66,8 @@ class PermitForm extends Form
             'type' => Element\Checkbox::class,
             'options' => [
                 'label' => 'Building Permit',
+                'checked_value' => 'Yes',
+                'unchecked_value' => 'No',
             ],
             'attributes' => [
                 'class' => 'form-control',

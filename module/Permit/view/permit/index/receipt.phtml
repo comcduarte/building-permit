@@ -71,7 +71,7 @@ $this->plugin('dateFormat')->setTimezone('America/New_York')->setLocale('en_US')
                             <p>
                                 <strong>State Fee:</strong>
                             </p></td>
-                            <td class="text-center">
+                            <td class="text-right">
                             <p>
                                 <strong><?= $this->currencyFormat($permit->ESTIMATED_COSTS); ?></strong>
                             </p>
@@ -81,7 +81,7 @@ $this->plugin('dateFormat')->setTimezone('America/New_York')->setLocale('en_US')
                         </tr>
                         <tr>
                             <td class="text-right"><h4><strong>Total:</strong></h4></td>
-                            <td class="text-center text-danger"><h4><strong><?= $this->currencyFormat($permit->PERMIT_FEE); ?></strong></h4></td>
+                            <td class="text-right text-danger"><h4><strong><?= $this->currencyFormat($permit->PERMIT_FEE); ?></strong></h4></td>
                         </tr>
                     </tbody>
                 </table>
