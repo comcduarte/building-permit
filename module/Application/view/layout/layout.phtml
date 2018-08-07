@@ -21,6 +21,7 @@
         <?= $this->headScript()
             ->prependFile($this->basePath('js/bootstrap.min.js'))
             ->prependFile($this->basePath('js/jquery-3.1.0.min.js'))
+            
             ->appendFile($this->basePath('js/accounting.min.js'))
             ->appendFile($this->basePath('js/building-permit.js'))
         ?>
@@ -37,6 +38,8 @@
                 <p>&copy; 2017 - <?= date('Y') ?> by The City of Middletown. All rights reserved.</p>
             </footer>
         </div>
-        <?= $this->inlineScript() ?>
+        <?= $this->inlineScript()
+            ->appendFile($this->basePath('js/jquery.mask.min.js'))
+        ?>
     </body>
 </html>
