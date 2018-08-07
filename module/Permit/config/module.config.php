@@ -144,16 +144,6 @@ return [
             ],
         ],
     ],
-    'service_manager' => [
-        'services' => [
-            'model-primary-adapter-config' => [
-                'driver' => 'PDO',
-                'dsn' => 'mysql:host=it-webdb01.midnet.cityofmiddletown.com;dbname=building-permit',
-                'username' => 'building-permit',
-                'password' => 'bAtMDQVrMutljgxOOvii',
-            ],
-        ],
-    ],
     'view_manager' => [
         'template_path_stack' => [
             __DIR__ . '/../view',
