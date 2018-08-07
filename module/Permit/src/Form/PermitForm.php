@@ -66,8 +66,6 @@ class PermitForm extends Form
             'type' => Element\Checkbox::class,
             'options' => [
                 'label' => 'Building Permit',
-                'checked_value' => 'Yes',
-                'unchecked_value' => 'No',
             ],
             'attributes' => [
                 'class' => 'form-control',
