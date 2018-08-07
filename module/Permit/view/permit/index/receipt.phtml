@@ -5,8 +5,13 @@ $this->plugin('dateFormat')->setTimezone('America/New_York')->setLocale('en_US')
 <div class="jumbotron">
 	<h1 class="display-2">Next Steps</h1>
 	<hr class="my-2">
-	<p>You have successfully submitted a permit.  Below is a confirmation of your submission.  Please print out and bring with you to the Department of Public Works, with payment.</p>
-	<p>If you are required to produce additional documentation required for the permit, please be sure to include those documents along with below receipt.</p>
+	<p>You have successfully submitted a permit application. This is <span class="text-underline">NOT</span> your permit, official permits will be emailed to you once reviewed and approved by the department. 
+		Please print this receipt and bring with you or mail a copy in to the Building Department along with your payment (Checks Only made out to The City of Middletown).</p>
+
+	<h4>Reminder:</h4>
+	<p>If you are required to produce additional documentation please be sure those are provided to the department. <strong>Permits will not be processed until full payment and <span class="text-underline">ALL</span> required paperwork is received.</strong></p>
+
+	<p>If you have any questions please contact the office at 860-638-4870 or email <a href="mailto:ashley.berent@middletownct.gov">Ashley.Berent@MiddletownCT.Gov</a>.</p>
 </div>
 
     <div class="row">
@@ -27,9 +32,25 @@ $this->plugin('dateFormat')->setTimezone('America/New_York')->setLocale('en_US')
                     <p>
                         <em>Date: <?= $this->dateFormat(new DateTime($permit->CREATION_DATE), IntlDateFormatter::LONG); ?></em>
                     </p>
-                    <p>
-                        <em>Permit #: <?= $permit->PERMIT_NUMBER; ?></em>
-                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-6 col-sm-6 col-md-6">
+                    <address>
+                        <strong>Applicant Address</strong><br>
+                        <?=$permit->PERMIT_APPLICANT_NAME?><br>
+                        <?=$permit->APPLICANTS_ADDRESS?><br>
+                        <?=$permit->APPLICANTS_CITY?>, <?=$permit->APPLICANTS_STATE?> <?=$permit->APPLICANTS_ZIP?><br>
+                        <abbr title="Phone">P: </abbr><?=$permit->APPLICANTS_PHONE?>
+                    </address>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-6">
+                    <address>
+                        <strong>Owner Address</strong><br>
+                        <?=$permit->OWNER_OF_PROPERTY_NAME?><br>
+                        <?=$permit->OWNERS_ADDRESS?><br>
+                        <?=$permit->OWNERS_CITY?>, <?=$permit->OWNERS_STATE?> <?=$permit->OWNERS_ZIP?><br>
+                    </address>
                 </div>
             </div>
             <div class="row">
@@ -49,6 +70,7 @@ $this->plugin('dateFormat')->setTimezone('America/New_York')->setLocale('en_US')
                     	    'BUILDING_PERMIT',
                     	    'PLUMBING_PERMIT',
                     	    'HVAC_PERMIT',
+                    	    'ELECTRIC_PERMIT',
                     	];
                     	
                     	foreach ($aryPermits as $appl_perm) {
@@ -64,23 +86,32 @@ $this->plugin('dateFormat')->setTimezone('America/New_York')->setLocale('en_US')
                     	?>
                         
                         <tr>
-                            <td class="text-right">
-                            <p>
-                                <strong>Estimated Costs:</strong>
-                            </p>
-                            <p>
-                                <strong>State Fee:</strong>
-                            </p></td>
-                            <td class="text-right">
-                            <p>
-                                <strong><?= $this->currencyFormat($permit->ESTIMATED_COSTS); ?></strong>
-                            </p>
-                            <p>
-                                <strong><?= $this->currencyFormat($permit->STATE_FEE); ?></strong>
-                            </p></td>
-                        </tr>
+						<td class="text-right">
+							<p>
+								<strong>Estimated Costs:</strong>
+							</p>
+							<p>
+								<strong>City Fee:</strong>
+								</p>
+							<p>
+								<strong>State Fee:</strong>
+							</p>
+							
+						</td>
+						<td class="text-right">
+							<p>
+								<strong><?= $this->currencyFormat($permit->ESTIMATED_COSTS); ?></strong>
+							</p>
+							<p>
+								<strong><?= $this->currencyFormat($permit->CITY_FEE); ?></strong>
+							</p>
+							<p>
+								<strong><?= $this->currencyFormat($permit->STATE_FEE); ?></strong>
+							</p>
+						</td>
+					</tr>
                         <tr>
-                            <td class="text-right"><h4><strong>Total:</strong></h4></td>
+                            <td class="text-right"><h4><strong>Permit Fee:</strong></h4></td>
                             <td class="text-right text-danger"><h4><strong><?= $this->currencyFormat($permit->PERMIT_FEE); ?></strong></h4></td>
                         </tr>
                     </tbody>

@@ -7,6 +7,8 @@ body {
 	color: #68b604;
 }
 
+.text-underline { text-decoration: underline; }
+
 .btn-success {
 	background-color: #57a900;
 	background-image: -moz-linear-gradient(top, #70d900, #57a900);
@@ -54,3 +56,4 @@ form input:invalid, select:invalid, textarea:invalid {
 	border-radius: 5px;
 	border-left-color: salmon;
 }
+
