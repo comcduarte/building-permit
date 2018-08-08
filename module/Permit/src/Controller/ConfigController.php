@@ -78,8 +78,8 @@ class ConfigController extends AbstractActionController
         
             ->addColumn(new Column\Integer('CITY_PROJECT', TRUE))
             ->addColumn(new Column\Decimal('CHARGEABLE_AMOUNT', 16, 2, TRUE))
-            ->addColumn(new Column\Integer('_OldID', TRUE))
-            ->addColumn(new Column\Decimal('qPermit', 16, 2, TRUE))
+            ->addColumn(new Column\Integer('_OLDID', TRUE))
+            ->addColumn(new Column\Decimal('QPERMIT', 16, 2, TRUE))
             ->addColumn(new Column\Decimal('Q', 16, 2, TRUE));
 
         $sql = new Sql($this->adapter);
