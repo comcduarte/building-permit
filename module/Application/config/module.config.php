@@ -43,7 +43,8 @@ return [
         ],
     ],
     'navigation' => [
-        'default' => [
+        'default' => [],
+        'admin' => [
             [
                 'label' => 'Home',
                 'route' => 'home',

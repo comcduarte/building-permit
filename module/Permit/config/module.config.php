@@ -93,7 +93,8 @@ return [
         ],
     ],
     'navigation' => [
-        'default' => [
+        'default' => [],
+        'admin' => [
             [
                 'label' => 'Permits',
                 'route' => 'permit',
