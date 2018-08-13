@@ -56,6 +56,7 @@ class Permit extends PermitObject
     public $CONTRACTORS_LICENSE_NUMBER;
     public $ESTIMATED_COSTS;
     public $PERMIT_FEE;
+    public $Q;
     
     public $CHECK_NUMBER;
     public $STATE_FEE;

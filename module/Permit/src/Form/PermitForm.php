@@ -25,7 +25,6 @@ class PermitForm extends Form
             'name' => 'Q',
             'type' => Element\Hidden::class,
             'attributes' => [
-                'value' => 0,
                 'id' => 'Q',
             ],
         ]);
@@ -34,7 +33,6 @@ class PermitForm extends Form
             'name' => 'QPERMIT',
             'type' => Element\Hidden::class,
             'attributes' => [
-                'value' => 0,
                 'id' => 'QPERMIT',
             ],
         ]);
@@ -43,7 +41,6 @@ class PermitForm extends Form
             'name' => 'STATE_FEE',
             'type' => Element\Hidden::class,
             'attributes' => [
-                'value' => 0,
                 'id' => 'STATE_FEE',
             ],
         ]);
@@ -52,7 +49,6 @@ class PermitForm extends Form
             'name' => 'CITY_FEE',
             'type' => Element\Hidden::class,
             'attributes' => [
-                'value' => 0,
                 'id' => 'CITY_FEE',
             ],
         ]);
@@ -61,7 +57,6 @@ class PermitForm extends Form
             'name' => 'TOTAL_FEE',
             'type' => Element\Hidden::class,
             'attributes' => [
-                'value' => 0,
                 'id' => 'TOTAL_FEE',
             ],
         ]);
