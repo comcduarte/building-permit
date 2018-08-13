@@ -22,11 +22,66 @@ class PermitForm extends Form
         ]);
         
         $this->add([
+            'name' => 'Q',
+            'type' => Element\Hidden::class,
+            'attributes' => [
+                'value' => 0,
+                'id' => 'Q',
+            ],
+        ]);
+        
+        $this->add([
+            'name' => 'QPERMIT',
+            'type' => Element\Hidden::class,
+            'attributes' => [
+                'value' => 0,
+                'id' => 'QPERMIT',
+            ],
+        ]);
+        
+        $this->add([
+            'name' => 'STATE_FEE',
+            'type' => Element\Hidden::class,
+            'attributes' => [
+                'value' => 0,
+                'id' => 'STATE_FEE',
+            ],
+        ]);
+        
+        $this->add([
+            'name' => 'CITY_FEE',
+            'type' => Element\Hidden::class,
+            'attributes' => [
+                'value' => 0,
+                'id' => 'CITY_FEE',
+            ],
+        ]);
+        
+        $this->add([
+            'name' => 'TOTAL_FEE',
+            'type' => Element\Hidden::class,
+            'attributes' => [
+                'value' => 0,
+                'id' => 'TOTAL_FEE',
+            ],
+        ]);
+        
+        $date = date('Y-m-d');
+        $this->add([
             'name' => 'CREATION_DATE',
             'type' => Element\Hidden::class,
             'attributes' => [
-                'value' => '2018-01-01',
+                'value' => $date,
                 'id' => 'CREATION_DATE',
+            ],
+        ]);
+        
+        $this->add([
+            'name' => 'PAYMENT_DATE',
+            'type' => Element\Hidden::class,
+            'attributes' => [
+                'value' => $date,
+                'id' => 'PAYMENT_DATE',
             ],
         ]);
        
