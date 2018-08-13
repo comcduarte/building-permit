@@ -90,23 +90,10 @@ $this->plugin('dateFormat')->setTimezone('America/New_York')->setLocale('en_US')
 							<p>
 								<strong>Estimated Costs:</strong>
 							</p>
-							<p>
-								<strong>City Fee:</strong>
-								</p>
-							<p>
-								<strong>State Fee:</strong>
-							</p>
-							
 						</td>
 						<td class="text-right">
 							<p>
 								<strong><?= $this->currencyFormat($permit->ESTIMATED_COSTS); ?></strong>
-							</p>
-							<p>
-								<strong><?= $this->currencyFormat($permit->CITY_FEE); ?></strong>
-							</p>
-							<p>
-								<strong><?= $this->currencyFormat($permit->STATE_FEE); ?></strong>
 							</p>
 						</td>
 					</tr>
