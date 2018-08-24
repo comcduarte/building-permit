@@ -6,8 +6,8 @@ $(document).ready(function() {
 			$('#Q').val(0.00);
 		} else {
 			$permit_fee = 15.26 + (Math.ceil($estimated_costs / 1000) - 1) * 14.26;
-			$('#PERMIT_FEE').val(accounting.formatNumber($permit_fee, 2, ",", "."));
-			$('#Q').val(accounting.formatNumber($permit_fee, 2, ",", "."));
+			$('#PERMIT_FEE').val(accounting.formatNumber($permit_fee, 2, "", "."));
+			$('#Q').val(accounting.formatNumber($permit_fee, 2, "", "."));
 		}
 	});
 	
