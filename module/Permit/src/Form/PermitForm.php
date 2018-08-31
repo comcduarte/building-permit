@@ -172,7 +172,7 @@ class PermitForm extends Form
                 'class' => 'form-control',
                 'id' => 'LOCATION_OF_PROPOSED_WORK',
                 'required' => 'true',
-                'placeholder' => 'Basement, Patio, Addition, etc.',
+                'placeholder' => '100 Main Street, etc.',
             ],
         ]);
         
