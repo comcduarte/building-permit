@@ -1,5 +1,7 @@
 .vagrant/
 .settings/
+.buildpath
+.project
 vendor/
 config/development.config.php
 config/autoload/local.php*
