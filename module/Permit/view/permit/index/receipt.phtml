@@ -30,12 +30,12 @@ $this->plugin('dateFormat')->setTimezone('America/New_York')->setLocale('en_US')
                 </div>
                 <div class="col-xs-6 col-sm-6 col-md-6 text-right">
                     <p>
-                        <em>Date: <?= $this->dateFormat(new DateTime($permit->CREATION_DATE), IntlDateFormatter::LONG); ?></em>
+                        <em>Date: <?= $this->dateFormat(new DateTime($permit->CREATION_DATE, new DateTimeZone('EDT')), IntlDateFormatter::LONG); ?></em>
                     </p>
                 </div>
             </div>
             <div class="row">
-                <div class="col-xs-6 col-sm-6 col-md-6">
+                <div class="col-xs-4 col-sm-4 col-md-4">
                     <address>
                         <strong>Applicant Address</strong><br>
                         <?=$permit->PERMIT_APPLICANT_NAME?><br>
@@ -44,13 +44,17 @@ $this->plugin('dateFormat')->setTimezone('America/New_York')->setLocale('en_US')
                         <abbr title="Phone">P: </abbr><?=$permit->APPLICANTS_PHONE?>
                     </address>
                 </div>
-                <div class="col-xs-6 col-sm-6 col-md-6">
+                <div class="col-xs-4 col-sm-4 col-md-4">
                     <address>
                         <strong>Owner Address</strong><br>
                         <?=$permit->OWNER_OF_PROPERTY_NAME?><br>
                         <?=$permit->OWNERS_ADDRESS?><br>
                         <?=$permit->OWNERS_CITY?>, <?=$permit->OWNERS_STATE?> <?=$permit->OWNERS_ZIP?><br>
                     </address>
+                </div>
+                <div class="col-xs-4 col-sm-4 col-md-4">
+                	<strong>Proposed Location:</strong> <?=$permit->LOCATION_OF_PROPOSED_WORK?><br>
+                	<strong>Permit Descrition:</strong> <?=$permit->PERMIT_DESCRIPTION?>
                 </div>
             </div>
             <div class="row">
