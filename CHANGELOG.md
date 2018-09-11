@@ -1,6 +1,8 @@
 # Building Permit Changelog
 
 ## [Unreleased]
+### Bugfix
+- Misspelled Description on receipt (#5)
 
 ## v1.0.4
 ### Bugfix
