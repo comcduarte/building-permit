@@ -1,8 +1,11 @@
 # Building Permit Changelog
 
 ## [Unreleased]
+
+## v1.0.4
 ### Bugfix
 - Date displayed on receipt differed on production server. (#2)
+- Fees not calculating correctly in backend (#4)
 ### Changes
 - Initiated formalized CHANGELOG
 - Proposed Location should be display on Receipt (#3)
