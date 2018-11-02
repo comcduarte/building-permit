@@ -3,6 +3,7 @@
 ## [Unreleased]
 ### Bugfix
 - Misspelled Description on receipt (#5)
+- Estimated Costs truncating when comma is used (#7)
 
 ## v1.0.4
 ### Bugfix

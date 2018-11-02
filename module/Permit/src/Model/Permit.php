@@ -5,6 +5,7 @@ use Zend\Filter\StringTrim;
 use Zend\Filter\StripTags;
 use Zend\Validator\EmailAddress;
 use Zend\Validator\Uuid;
+use Zend\Validator\Regex;
 
 class Permit extends PermitObject
 {
@@ -131,6 +132,22 @@ class Permit extends PermitObject
             'validators' => [
                 ['name' => EmailAddress::class,],
             ],
+        ]);
+        
+        $inputFilter->add([
+            'name' => 'ESTIMATED_COSTS',
+            'validators' => [
+                [
+                    'name' => Regex::class,
+                    'options' => [
+                        'pattern' => '/^\d*\.\d{2}$/',
+                        'messages' => [
+                            'regexNotMatch' => 'Please enter monetary value as only digits. No dollar signs, commas, or spaces.',
+                        ],
+                    ],
+                ],
+            ],
+            
         ]);
         
         $this->inputFilter = $inputFilter;
