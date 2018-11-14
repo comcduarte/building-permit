@@ -140,7 +140,7 @@ class Permit extends PermitObject
                 [
                     'name' => Regex::class,
                     'options' => [
-                        'pattern' => '/^\d*\.\d{2}$/',
+                        'pattern' => '/^\d*\.*\d{0,2}$/',
                         'messages' => [
                             'regexNotMatch' => 'Please enter monetary value as only digits. No dollar signs, commas, or spaces.',
                         ],
