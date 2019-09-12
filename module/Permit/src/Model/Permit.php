@@ -149,21 +149,7 @@ class Permit extends PermitObject
                 ],
             ],
         ]);
-        
-        $inputFilter->add([
-            'name' => 'SECURITY',
-            'validators' => [
-                [
-                    'name' => Csrf::class,
-                    'options' => [
-                        'messages' => [
-                            'notSame' => "Timeout Error: If there are no other errors, please click Submit to try again.",
-                        ],
-                    ],
-                ],
-            ],
-        ]);
-        
+             
         $this->inputFilter = $inputFilter;
         return $this->inputFilter;
     }
