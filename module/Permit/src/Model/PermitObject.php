@@ -49,6 +49,7 @@ class PermitObject implements InputFilterAwareInterface
     
     public function getArrayCopy()
     {
+        $data = [];
         foreach ($this->public_attributes as $var) {
             $data[$var] = $this->{$var};
         }
@@ -124,7 +125,7 @@ class PermitObject implements InputFilterAwareInterface
         $statement = $sql->prepareStatementForSqlObject($insert);
         
         try {
-            $resultSet = $statement->execute();
+            $statement->execute();
         } catch (Exception $e) {
             return $e;
         }
@@ -169,7 +170,7 @@ class PermitObject implements InputFilterAwareInterface
         $statement = $sql->prepareStatementForSqlObject($update);
         
         try {
-            $resultSet = $statement->execute();
+            $statement->execute();
         } catch (Exception $e) {
             return $e;
         }
@@ -187,7 +188,7 @@ class PermitObject implements InputFilterAwareInterface
         $statement = $sql->prepareStatementForSqlObject($delete);
         
         try {
-            $resultSet = $statement->execute();
+            $statement->execute();
         } catch (Exception $e) {
             return $e;
         }
