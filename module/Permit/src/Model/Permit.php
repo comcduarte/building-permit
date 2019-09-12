@@ -6,6 +6,7 @@ use Zend\Filter\StripTags;
 use Zend\Validator\EmailAddress;
 use Zend\Validator\Uuid;
 use Zend\Validator\Regex;
+use Zend\Validator\Csrf;
 
 class Permit extends PermitObject
 {
@@ -147,7 +148,20 @@ class Permit extends PermitObject
                     ],
                 ],
             ],
-            
+        ]);
+        
+        $inputFilter->add([
+            'name' => 'SECURITY',
+            'validators' => [
+                [
+                    'name' => Csrf::class,
+                    'options' => [
+                        'messages' => [
+                            'notSame' => "Timeout Error: If there are no other errors, please click Submit to try again.",
+                        ],
+                    ],
+                ],
+            ],
         ]);
         
         $this->inputFilter = $inputFilter;
