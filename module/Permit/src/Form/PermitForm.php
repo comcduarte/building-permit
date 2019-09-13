@@ -538,8 +538,18 @@ class PermitForm extends Form
             ],
         ]);
         
-        
-        $this->add(new Element\Csrf('SECURITY'));
+        $this->add([
+            'name' => 'SECURITY',
+            'type' => element\Csrf::class,
+            'options' => [
+                'csrf_options' => [
+                    'timeout' => 600,
+                    'messages' => [
+                        'notSame' => 'Testing',
+                    ],
+                ],
+            ],
+        ]);
         
         $this->add([
             'name' => 'SUBMIT',

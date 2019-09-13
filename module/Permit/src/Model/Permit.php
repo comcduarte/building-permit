@@ -4,9 +4,8 @@ namespace Permit\Model;
 use Zend\Filter\StringTrim;
 use Zend\Filter\StripTags;
 use Zend\Validator\EmailAddress;
-use Zend\Validator\Uuid;
 use Zend\Validator\Regex;
-use Zend\Validator\Csrf;
+use Zend\Validator\Uuid;
 
 class Permit extends PermitObject
 {
@@ -149,7 +148,7 @@ class Permit extends PermitObject
                 ],
             ],
         ]);
-             
+        
         $this->inputFilter = $inputFilter;
         return $this->inputFilter;
     }
