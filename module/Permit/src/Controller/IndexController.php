@@ -52,7 +52,6 @@ class IndexController extends AbstractActionController
     
     public function updateAction()
     {
-        $params = $this->params()->fromRoute();
         $uuid = $this->params()->fromRoute('uuid',0);
         if (!$uuid) {
             return $this->redirect()->toRoute('permit');
