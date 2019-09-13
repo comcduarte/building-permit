@@ -172,7 +172,7 @@ class PermitForm extends Form
                 'class' => 'form-control',
                 'id' => 'LOCATION_OF_PROPOSED_WORK',
                 'required' => 'true',
-                'placeholder' => 'Basement, Patio, Addition, etc.',
+                'placeholder' => '100 Main Street, etc.',
             ],
         ]);
         
@@ -538,8 +538,18 @@ class PermitForm extends Form
             ],
         ]);
         
-        
-        $this->add(new Element\Csrf('SECURITY'));
+        $this->add([
+            'name' => 'SECURITY',
+            'type' => element\Csrf::class,
+            'options' => [
+                'csrf_options' => [
+                    'timeout' => 600,
+                    'messages' => [
+                        'notSame' => 'Timeout Error: Correct any errors and submit again.',
+                    ],
+                ],
+            ],
+        ]);
         
         $this->add([
             'name' => 'SUBMIT',

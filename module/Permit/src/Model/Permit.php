@@ -4,6 +4,7 @@ namespace Permit\Model;
 use Zend\Filter\StringTrim;
 use Zend\Filter\StripTags;
 use Zend\Validator\EmailAddress;
+use Zend\Validator\Regex;
 use Zend\Validator\Uuid;
 
 class Permit extends PermitObject
@@ -130,6 +131,21 @@ class Permit extends PermitObject
             'name' => 'APPLICANTS_EMAIL',
             'validators' => [
                 ['name' => EmailAddress::class,],
+            ],
+        ]);
+        
+        $inputFilter->add([
+            'name' => 'ESTIMATED_COSTS',
+            'validators' => [
+                [
+                    'name' => Regex::class,
+                    'options' => [
+                        'pattern' => '/^\d*\.*\d{0,2}$/',
+                        'messages' => [
+                            'regexNotMatch' => 'Please enter monetary value as only digits. No dollar signs, commas, or spaces.',
+                        ],
+                    ],
+                ],
             ],
         ]);
         
