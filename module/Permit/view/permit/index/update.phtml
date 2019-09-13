@@ -1,0 +1,17 @@
+<?php 
+$title = 'Update Permit';
+$this->headtitle($title);
+?>
+<h1><?php echo $this->escapehtml($title); ?></h1>
+
+<?php 
+$form = $this->form;
+$form->setAttribute('action', $this->url('permit/default', array('action'=>'update', 'uuid'=>$this->uuid)));
+$form->prepare();
+
+echo $this->form()->openTag($form);
+echo $this->formcollection($form);
+echo $this->form()->closeTag();
+?>
+
+<a href="<?=$this->url('permit/default', ['action' => 'receipt', 'uuid' => $this->uuid])?>" class="btn btn-primary">View Receipt</a>

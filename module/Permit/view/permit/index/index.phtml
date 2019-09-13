@@ -1,0 +1,36 @@
+<div class="container">
+	<!-- Add News: WYSIWYG Edior -->
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Permit Number</th>
+				<th>Full Name</th>
+				<th>Address</th>
+				<th>City</th>
+				<th>State</th>
+				<th>Zip</th>
+				<th>Phone</th>
+				<th>Fax</th>
+				<th>Email</th>
+				<th />
+			</tr>
+		</thead>
+		<tbody>
+		<?php foreach ($permits as $permit) : ?>
+			<tr>
+				<td><a href=<?php echo $this->url('permit/default', ['action' => 'update','uuid' => $permit['UUID']]); ?>><?=$permit['PERMIT_NUMBER']?></a></td>
+				<td><?=$permit['PERMIT_APPLICANT_NAME']?></td>
+				<td><?=$permit['APPLICANTS_ADDRESS']?></td>
+				<td><?=$permit['APPLICANTS_CITY']?></td>
+				<td><?=$permit['APPLICANTS_STATE']?></td>
+				<td><?=$permit['APPLICANTS_ZIP']?></td>
+				<td><?=$permit['APPLICANTS_PHONE']?></td>
+				<td><?=$permit['APPLICANTS_FAX']?></td>
+				<td><?=$permit['APPLICANTS_EMAIL']?></td>
+				<td><a class="btn btn-danger" href=<?php echo $this->url('permit/default', ['action' => 'delete','uuid' => $permit['UUID']]); ?>>Delete</a></td>
+			</tr>
+		<?php endforeach; ?>
+		</tbody>
+	</table>
+	<!-- / Add News: WYSIWYG Edior -->
+</div>

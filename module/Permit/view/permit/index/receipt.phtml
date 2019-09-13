@@ -1,0 +1,112 @@
+<?php 
+$this->plugin("currencyformat")->setCurrencyCode("USD")->setLocale("en_US"); 
+$this->plugin('dateFormat')->setTimezone('America/New_York')->setLocale('en_US');
+?>
+<div class="jumbotron">
+	<h1 class="display-2">Next Steps</h1>
+	<hr class="my-2">
+	<p>You have successfully submitted a permit application. This is <span class="text-underline">NOT</span> your permit, official permits will be emailed to you once reviewed and approved by the department. 
+		Please print this receipt and bring with you or mail a copy in to the Building Department along with your payment (Checks Only made out to The City of Middletown).</p>
+
+	<h4>Reminder:</h4>
+	<p>If you are required to produce additional documentation please be sure those are provided to the department. <strong>Permits will not be processed until full payment and <span class="text-underline">ALL</span> required paperwork is received.</strong></p>
+
+	<p>If you have any questions please contact the office at 860-638-4870 or email <a href="mailto:ashley.berent@middletownct.gov">Ashley.Berent@MiddletownCT.Gov</a>.</p>
+</div>
+
+    <div class="row">
+        <div class="col-12">
+            <div class="row">
+                <div class="col-xs-6 col-sm-6 col-md-6">
+                    <address>
+                        <strong>The City of Middletown</strong>
+                        <br>
+                        245 deKoven Drive
+                        <br>
+                        Middletown, CT 06457
+                        <br>
+                        <abbr title="Phone">P:</abbr> 860-638-4870
+                    </address>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-6 text-right">
+                    <p>
+                        <em>Date: <?= $this->dateFormat(new DateTime($permit->CREATION_DATE, new DateTimeZone('EDT')), IntlDateFormatter::LONG); ?></em>
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-4 col-sm-4 col-md-4">
+                    <address>
+                        <strong>Applicant Address</strong><br>
+                        <?=$permit->PERMIT_APPLICANT_NAME?><br>
+                        <?=$permit->APPLICANTS_ADDRESS?><br>
+                        <?=$permit->APPLICANTS_CITY?>, <?=$permit->APPLICANTS_STATE?> <?=$permit->APPLICANTS_ZIP?><br>
+                        <abbr title="Phone">P: </abbr><?=$permit->APPLICANTS_PHONE?>
+                    </address>
+                </div>
+                <div class="col-xs-4 col-sm-4 col-md-4">
+                    <address>
+                        <strong>Owner Address</strong><br>
+                        <?=$permit->OWNER_OF_PROPERTY_NAME?><br>
+                        <?=$permit->OWNERS_ADDRESS?><br>
+                        <?=$permit->OWNERS_CITY?>, <?=$permit->OWNERS_STATE?> <?=$permit->OWNERS_ZIP?><br>
+                    </address>
+                </div>
+                <div class="col-xs-4 col-sm-4 col-md-4">
+                	<strong>Proposed Location:</strong> <?=$permit->LOCATION_OF_PROPOSED_WORK?><br>
+                	<strong>Permit Description:</strong> <?=$permit->PERMIT_DESCRIPTION?>
+                </div>
+            </div>
+            <div class="row">
+                <div class="text-center">
+                    <h1>Receipt of Submission</h1>
+                </div>
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Permits</th>
+                            <th class="text-center"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    	<?php 
+                    	$aryPermits = [
+                    	    'BUILDING_PERMIT',
+                    	    'PLUMBING_PERMIT',
+                    	    'HVAC_PERMIT',
+                    	    'ELECTRIC_PERMIT',
+                    	];
+                    	
+                    	foreach ($aryPermits as $appl_perm) {
+                    	    if ($permit->$appl_perm) {
+                    	        ?>
+            	        <tr>
+                            <td class="col-md-9"><em><?=$appl_perm;?></em></td>
+                            <td class="col-md-1 text-center"></td>
+                        </tr>
+                    	        <?php 
+                    	    }
+                    	}
+                    	?>
+                        
+                        <tr>
+						<td class="text-right">
+							<p>
+								<strong>Estimated Costs:</strong>
+							</p>
+						</td>
+						<td class="text-right">
+							<p>
+								<strong><?= $this->currencyFormat($permit->ESTIMATED_COSTS); ?></strong>
+							</p>
+						</td>
+					</tr>
+                        <tr>
+                            <td class="text-right"><h4><strong>Permit Fee:</strong></h4></td>
+                            <td class="text-right text-danger"><h4><strong><?= $this->currencyFormat($permit->PERMIT_FEE); ?></strong></h4></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>

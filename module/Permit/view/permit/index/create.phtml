@@ -1,0 +1,192 @@
+<?php
+$title = "Create New Permit";
+$this->headtitle($title);
+?>
+<div class="jumbotron">
+	<h1 class="display-4"><?php echo $this->escapehtml($title); ?></h1>
+	<p class="lead">Instructions for online permitting applications</p>
+	<hr class="my-4">
+	<ol>
+		<li>Select type of permit and fill out all boxes of application (more than 1 permit may be selected).</li>
+		<li>Permit fee will generate after estimated cost is inputted (Permit fees are based on the estimated value of the work being done. This includes labor and materials. If you are not paying for one or both of these items a fair value is still required.)</li>
+		<li>If you are a contractor, or someone besides the property owner, click on <a href="<?=$this->url('download/default', ['action' => 'pdf', 'filename' => 'consent_form']);?>">Consent Form</a> Link and have it signed by the owner of the property. Email form to <a href="mailto:ashley.berent@middletownct.gov">Ashley.Berent@MiddletownCT.Gov</a>.</li>
+		<li>Contractors, email copy of valid contractor's license &amp; certificate of liability insurance to <a href="mailto:ashley.berent@middletownct.gov">Ashley.Berent@MiddletownCT.Gov</a></li>
+		<li>Plans, specs or other paperwork may be required based on proposed job. Please ensure a valid email address and phone number is provided so this information can be requested if needed.</li>
+		<li>If you have any questions please contact the office at 860-638-4870 or email <a href="mailto:ashley.berent@middletownct.gov">Ashley.Berent@MiddletownCT.Gov</a>.</li>
+	</ol>
+</div>
+
+
+
+<?php
+$form->setAttribute('action', $this->url('permit/default', array(
+    'action' => 'create'
+)));
+$form->prepare();
+?>
+<div class="container-fluid">
+	
+<?php
+echo $this->form()->openTag($form);
+// echo $this->formCollection($form);
+echo $this->formRow($form->get('UUID'));
+echo $this->formRow($form->get('PERMIT_NUMBER'));
+echo $this->formRow($form->get('CREATION_DATE'));
+echo $this->formRow($form->get('PAYMENT_DATE'));
+echo $this->formRow($form->get('Q'));
+echo $this->formRow($form->get('QPERMIT'));
+echo $this->formRow($form->get('STATE_FEE'));
+echo $this->formRow($form->get('CITY_FEE'));
+echo $this->formRow($form->get('TOTAL_FEE'));
+
+/**
+ * Display Permit Checkboxes
+ */
+$aryPermits[] = $form->get('BUILDING_PERMIT');
+$aryPermits[] = $form->get('ELECTRIC_PERMIT');
+$aryPermits[] = $form->get('PLUMBING_PERMIT');
+// $aryPermits[] = $form->get('DEMOLITION_PERMIT');
+$aryPermits[] = $form->get('HVAC_PERMIT');
+
+echo '<h3>Permits</h3><div class="row">';
+foreach ($aryPermits as $permit) :
+?>
+		<div class="col-sm-4">
+			<?= $this->formElementErrors($permit); ?>
+			<div class="input-group mb-3" style="width: 100%">
+				<div class="input-group-prepend">
+					<div class="input-group-text" style="width: 40px">
+						<?= $this->formCheckbox($permit); ?>
+					</div>
+				</div>
+				<span class="form-control"><?= $permit->getOption('label'); ?></span>
+			</div>
+		</div>
+<?php 
+endforeach;
+echo '</div>'; 
+
+/**
+ * Display Applicant Input Form
+ */
+echo '<div class="row">';
+echo '<div class="col-sm-6"><h3>Applicant Information</h3>';
+
+$aryApplicant[] = $form->get('PERMIT_APPLICANT_NAME');
+$aryApplicant[] = $form->get('APPLICANTS_ADDRESS');
+$aryApplicant[] = $form->get('APPLICANTS_CITY');
+$aryApplicant[] = $form->get('APPLICANTS_STATE');
+$aryApplicant[] = $form->get('APPLICANTS_ZIP');
+$aryApplicant[] = $form->get('APPLICANTS_PHONE');
+$aryApplicant[] = $form->get('APPLICANTS_FAX');
+$aryApplicant[] = $form->get('APPLICANTS_EMAIL');
+
+foreach ($aryApplicant as $field) :
+?>
+<div class="form-group">
+	<?= $this->formRow($field); ?>
+</div>
+<?php 
+endforeach;
+echo '</div>'; //-- END APPLICANT COL --//
+?>
+
+<?php 
+/**
+ * Display Applicant Input Form
+ */
+echo '<div class="col-sm-6"><h3>Owner Information</h3>';
+
+$aryOwner[] = $form->get('OWNER_OF_PROPERTY_NAME');
+$aryOwner[] = $form->get('OWNERS_ADDRESS');
+$aryOwner[] = $form->get('OWNERS_CITY');
+$aryOwner[] = $form->get('OWNERS_STATE');
+$aryOwner[] = $form->get('OWNERS_ZIP');
+
+
+foreach ($aryOwner as $field) :
+?>
+<div class="form-group">
+	<?= $this->formRow($field); ?>
+</div>
+<?php 
+endforeach;
+echo '</div>'; //-- END OWNER COL --//
+echo '</div>'; //-- END ROW --//
+
+/**
+ * Display Permit Information
+ */
+echo '<h3>Permit Information</h3>';
+echo '<div class="row"><div class="col-sm-6">';
+
+$aryPermit[] = $form->get('LOCATION_OF_PROPOSED_WORK');
+// $aryPermit[] = $form->get('NUMBER_OF_DWELLING_UNITS');
+
+$aryPermit[] = $form->get('CHECK_NUMBER');
+$aryPermit[] = $form->get('CONTRACTORS_LICENSE_NUMBER');
+
+foreach ($aryPermit as $field) :
+?>
+<div class="form-group">
+	<?= $this->formRow($field); ?>
+</div>
+<?php 
+endforeach;
+
+/**
+ * Display monetary fields
+ */
+$aryPermit = null;
+$aryPermit[] = $form->get('ESTIMATED_COSTS');
+$aryPermit[] = $form->get('PERMIT_FEE');
+foreach ($aryPermit as $field) :
+?>
+	<label for="<?=$field->getName();?>"><?= $field->getOption('label'); ?></label>	
+	<?= $this->formElementErrors($field); ?>
+	<div class="input-group mb-3">
+		<div class="input-group-prepend">
+			<span class="input-group-text">$</span>
+		</div>
+		<?= $this->formInput($field); ?>
+	</div>
+	<?php 
+endforeach;
+
+
+
+
+
+
+echo '</div>'; //-- END PERMIT COLS --//
+
+$field = $form->get('RESIDENTIAL_OR_COMMERCIAL');
+?>
+    <div class="col-sm-6">
+    	<div class="form-group">
+			<?= $this->formRow($field); ?>
+    	</div>
+    	<?php $field = $form->get('PERMIT_DESCRIPTION'); ?>
+        <div class="form-group">
+        	<?= $this->formRow($field); ?>
+        </div>
+    </div>
+<?php 
+echo '</div>'; //-- END PERMIT INFO ROW --//
+?>
+
+<div class="row">
+	<div class="col-sm-12">
+    	<?= $this->formRow($form->get('SECURITY')); ?>
+    	<?= $this->formRow($form->get('SUBMIT')); ?>
+	</div>
+</div>
+
+
+
+
+
+
+
+<?php echo $this->form()->closeTag(); ?>
+</div>

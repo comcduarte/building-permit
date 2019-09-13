@@ -1,33 +1,59 @@
 body {
-    padding-top: 60px;
-    padding-bottom: 40px;
+	/*     padding-top: 60px; */
+	padding-bottom: 40px;
 }
 
 .zf-green {
-    color: #68b604;
+	color: #68b604;
 }
+
+.text-underline { text-decoration: underline; }
 
 .btn-success {
-    background-color: #57a900;
-    background-image: -moz-linear-gradient(top, #70d900, #57a900);
-    background-image: -ms-linear-gradient(top, #70d900, #57a900);
-    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#70d900), to(#57a900));
-    background-image: -webkit-linear-gradient(top, #70d900, #57a900);
-    background-image: -o-linear-gradient(top, #70d900, #57a900);
-    background-image: linear-gradient(top, #70d900, #57a900);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#70d900', endColorstr='#57a900', GradientType=0);
+	background-color: #57a900;
+	background-image: -moz-linear-gradient(top, #70d900, #57a900);
+	background-image: -ms-linear-gradient(top, #70d900, #57a900);
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#70d900),
+		to(#57a900));
+	background-image: -webkit-linear-gradient(top, #70d900, #57a900);
+	background-image: -o-linear-gradient(top, #70d900, #57a900);
+	background-image: linear-gradient(top, #70d900, #57a900);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#70d900',
+		endColorstr='#57a900', GradientType=0);
 }
 
-.btn-success:hover,
-.btn-success:active,
-.btn-success.active,
-.btn-success.disabled,
-.btn-success[disabled] {
-    background-color: #57a900;
+.btn-success:hover, .btn-success:active, .btn-success.active,
+	.btn-success.disabled, .btn-success[disabled] {
+	background-color: #57a900;
 }
 
-div.container a.navbar-brand > img {
-    display: inline;
-    margin-right: 4px;
-    margin-top: -2px;
+div.container a.navbar-brand>img {
+	display: inline;
+	margin-right: 4px;
+	margin-top: -2px;
 }
+
+
+/**
+ * Below is used to highlight required/validated fields in the forms
+ * by putting a small green/red/grey border color on the left of the
+ * input field.
+ */
+form input:optional, select:optional, textarea:optional {
+	border-left: 3px solid;
+	border-radius: 5px;
+	border-left-color: #999;
+}
+
+form input:required, select:required, textarea:required {
+	border-left: 3px solid;
+	border-radius: 5px;
+	border-left-color: palegreen;
+}
+
+form input:invalid, select:invalid, textarea:invalid {
+	border-left: 3px solid;
+	border-radius: 5px;
+	border-left-color: salmon;
+}
+
