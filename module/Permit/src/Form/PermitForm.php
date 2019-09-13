@@ -545,7 +545,7 @@ class PermitForm extends Form
                 'csrf_options' => [
                     'timeout' => 600,
                     'messages' => [
-                        'notSame' => 'Testing',
+                        'notSame' => 'Timeout Error: Correct any errors and submit again.',
                     ],
                 ],
             ],
