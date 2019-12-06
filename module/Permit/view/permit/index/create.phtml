@@ -175,17 +175,35 @@ echo '</div>'; //-- END PERMIT INFO ROW --//
 ?>
 
 <div class="row">
+	<h3>Affidavit and Agreement (check one)</h3>
+	<?php 
+	$field = $form->get('AFFIDAVIT');
+	$agree = $form->get('AGREE');
+	?>
+	<p>
+	I hereby certify that <?= $this->formRow($field); ?>; I agree to call in advance for each trade inspection and not to conceal any work before inspection; 
+	I understand this is an application for a permit and in no way an authorization to start work, unless authorized by the Building Official under certain 
+	circumstances. I understand that when a permit is issued, it is to begin the approved work and grants no right to violate any code, ordinance or statute.
+	</p>
+	
+	<?= $this->formElementErrors($agree); ?>
+	<div class="input-group mb-3" style="width: 100%">
+		<div class="input-group-prepend">
+			<div class="input-group-text" style="width: 40px">
+				<?= $this->formCheckbox($agree); ?>
+			</div>
+		</div>
+		<span class="form-control"><?= $agree->getOption('label'); ?></span>
+	</div>
+	
+</div>
+
+<div class="row">
 	<div class="col-sm-12">
     	<?= $this->formRow($form->get('SECURITY')); ?>
     	<?= $this->formRow($form->get('SUBMIT')); ?>
 	</div>
 </div>
-
-
-
-
-
-
 
 <?php echo $this->form()->closeTag(); ?>
 </div>

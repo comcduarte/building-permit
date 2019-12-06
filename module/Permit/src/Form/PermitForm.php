@@ -539,6 +539,34 @@ class PermitForm extends Form
         ]);
         
         $this->add([
+            'name' => 'AFFIDAVIT',
+            'type' => Element\Radio::class,
+            'attributes' => [
+                'id' => 'AFFIDAVIT',
+                'required' => TRUE,
+            ],
+            'options' => [
+                'value_options' => [
+                    'I am the owner of the property, which is the subject of this application OR the',
+                    'authorized agent of the property owner',
+                ],
+            ],
+        ]);
+        
+        $this->add([
+            'name' => 'AGREE',
+            'type' => Element\Checkbox::class,
+            'options' => [
+                'label' => 'I HAVE READ AND AGREE TO ALL THE ABOVE',
+            ],
+            'attributes' => [
+                'class' => 'form-control',
+                'id' => 'AGREE',
+                'required' => TRUE,
+            ],
+        ]);
+        
+        $this->add([
             'name' => 'SECURITY',
             'type' => element\Csrf::class,
             'options' => [
