@@ -490,7 +490,7 @@ class PermitForm extends Form
             'name' => 'ESTIMATED_COSTS',
             'type' => Element\Text::class,
             'options' => [
-                'label' => 'Estimated Costs',
+                'label' => 'Estimated Costs (No Commas)',
             ],
             'attributes' => [
                 'class' => 'form-control',
