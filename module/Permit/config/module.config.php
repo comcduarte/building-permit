@@ -33,12 +33,23 @@ return [
                 ],
                 'may_terminate' => true,
                 'child_routes' => [
-                    'default' => [
+                    'create' => [
                         'type' => Segment::class,
                         'options' => [
-                            'route' => '/[:action][/:uuid]',
+                            'route' => '/create[/:uuid]',
                         ],
-                        'defaults' => [],
+                        'defaults' => [
+                            'action' => 'create',
+                        ],
+                    ],
+                    'read' => [
+                        'type' => Segment::class,
+                        'options' => [
+                            'route' => '/receipt[/:uuid]',
+                        ],
+                        'defaults' => [
+                            'action' => 'receipt',
+                        ],
                     ],
                 ],
             ],
