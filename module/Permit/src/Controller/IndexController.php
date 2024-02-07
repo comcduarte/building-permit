@@ -36,7 +36,7 @@ class IndexController extends AbstractActionController
                 $permit->exchangeArray($form->getData());
                 
                 $permit->create();
-                return $this->redirect()->toRoute('permit/receipt', ['action' => 'receipt', 'uuid' => $permit->UUID] );
+                return $this->redirect()->toRoute('permit/receipt', ['uuid' => $permit->UUID] );
             }
         }
         
