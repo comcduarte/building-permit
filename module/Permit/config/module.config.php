@@ -37,18 +37,19 @@ return [
                         'type' => Segment::class,
                         'options' => [
                             'route' => '/create',
-                        ],
-                        'defaults' => [
+                            'defaults' => [
                             'action' => 'create',
+                            ],
                         ],
+                        
                     ],
                     'receipt' => [
                         'type' => Segment::class,
                         'options' => [
                             'route' => '/receipt[/:uuid]',
-                        ],
-                        'defaults' => [
-                            'action' => 'receipt',
+                            'defaults' => [
+                                'action' => 'receipt',
+                            ],
                         ],
                     ],
                 ],
