@@ -117,7 +117,7 @@ return [
                     ],
                     [
                         'label' => 'Create Permit',
-                        'route' => 'permit/default',
+                        'route' => 'permit/create',
                         'action' => 'create',
                     ],
                 ],
