@@ -13,6 +13,6 @@ class IndexController extends AbstractActionController
 {
     public function indexAction()
     {
-        return $this->redirect()->toRoute('permit/default', ['action' => 'create'] );
+        return $this->redirect()->toRoute('permit/create', ['action' => 'create'] );
     }
 }
