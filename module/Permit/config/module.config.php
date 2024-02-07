@@ -28,7 +28,7 @@ return [
                     'route' => '/permit',
                     'defaults' => [
                         'controller' => Controller\IndexController::class,
-                        'action' => 'index',
+                        'action' => 'create',
                     ],
                 ],
                 'may_terminate' => true,
