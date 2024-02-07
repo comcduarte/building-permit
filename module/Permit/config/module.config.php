@@ -36,9 +36,11 @@ return [
                     'default' => [
                         'type' => Segment::class,
                         'options' => [
-                            'route' => '/[:action][/:uuid]',
+                            'route' => '/create[/:uuid]',
                         ],
-                        'defaults' => [],
+                        'defaults' => [
+                            'action' => 'create',
+                        ],
                     ],
                 ],
             ],
