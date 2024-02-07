@@ -33,7 +33,7 @@ return [
                 ],
                 'may_terminate' => true,
                 'child_routes' => [
-                    'create' => [
+                    'default' => [
                         'type' => Segment::class,
                         'options' => [
                             'route' => '/create[/:uuid]',
