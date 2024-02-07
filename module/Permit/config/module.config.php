@@ -42,7 +42,7 @@ return [
                             'action' => 'create',
                         ],
                     ],
-                    'read' => [
+                    'receipt' => [
                         'type' => Segment::class,
                         'options' => [
                             'route' => '/receipt[/:uuid]',
