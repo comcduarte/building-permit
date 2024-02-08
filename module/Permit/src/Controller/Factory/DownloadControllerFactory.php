@@ -2,8 +2,8 @@
 namespace Permit\Controller\Factory;
 
 use Permit\Controller\DownloadController;
-use Interop\Container\ContainerInterface;
-use Zend\ServiceManager\Factory\FactoryInterface;
+use Psr\Container\ContainerInterface;
+use Laminas\ServiceManager\Factory\FactoryInterface;
 
 class DownloadControllerFactory implements FactoryInterface
 {

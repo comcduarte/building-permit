@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <buildpath>
-	<buildpathentry kind="src" path="vendor/zendframework/zend-navigation/src">
+	<buildpathentry kind="src" path="vendor/laminas/laminas-navigation/src">
 		<attributes>
 			<attribute name="composer" value="vendor"/>
 		</attributes>
@@ -10,12 +10,12 @@
 			<attribute name="composer" value="source"/>
 		</attributes>
 	</buildpathentry>
-	<buildpathentry kind="src" path="vendor/zendframework/zend-loader/src">
+	<buildpathentry kind="src" path="vendor/laminas/laminas-loader/src">
 		<attributes>
 			<attribute name="composer" value="vendor"/>
 		</attributes>
 	</buildpathentry>
-	<buildpathentry kind="src" path="vendor/zendframework/zend-session/src">
+	<buildpathentry kind="src" path="vendor/laminas/laminas-session/src">
 		<attributes>
 			<attribute name="composer" value="vendor"/>
 		</attributes>
@@ -25,27 +25,27 @@
 			<attribute name="composer" value="vendor"/>
 		</attributes>
 	</buildpathentry>
-	<buildpathentry kind="src" path="vendor/zendframework/zend-mvc-plugin-flashmessenger/src">
+	<buildpathentry kind="src" path="vendor/laminas/laminas-mvc-plugin-flashmessenger/src">
 		<attributes>
 			<attribute name="composer" value="vendor"/>
 		</attributes>
 	</buildpathentry>
-	<buildpathentry kind="src" path="vendor/zendframework/zend-modulemanager/src">
+	<buildpathentry kind="src" path="vendor/laminas/laminas-modulemanager/src">
 		<attributes>
 			<attribute name="composer" value="vendor"/>
 		</attributes>
 	</buildpathentry>
-	<buildpathentry kind="src" path="vendor/zendframework/zend-uri/src">
+	<buildpathentry kind="src" path="vendor/laminas/laminas-uri/src">
 		<attributes>
 			<attribute name="composer" value="vendor"/>
 		</attributes>
 	</buildpathentry>
-	<buildpathentry kind="src" path="vendor/zendframework/zend-form/autoload">
+	<buildpathentry kind="src" path="vendor/laminas/laminas-form/autoload">
 		<attributes>
 			<attribute name="composer" value="vendor"/>
 		</attributes>
 	</buildpathentry>
-	<buildpathentry kind="src" path="vendor/zendframework/zend-filter/src">
+	<buildpathentry kind="src" path="vendor/laminas/laminas-filter/src">
 		<attributes>
 			<attribute name="composer" value="vendor"/>
 		</attributes>
@@ -55,33 +55,33 @@
 			<attribute name="composer" value="vendor"/>
 		</attributes>
 	</buildpathentry>
-	<buildpathentry kind="src" path="vendor/zendframework/zend-servicemanager/src">
+	<buildpathentry kind="src" path="vendor/laminas/laminas-servicemanager/src">
 		<attributes>
 			<attribute name="composer" value="vendor"/>
 		</attributes>
 	</buildpathentry>
-	<buildpathentry kind="src" path="vendor/zendframework/zend-hydrator/src">
+	<buildpathentry kind="src" path="vendor/laminas/laminas-hydrator/src">
 		<attributes>
 			<attribute name="composer" value="vendor"/>
 		</attributes>
 	</buildpathentry>
-	<buildpathentry kind="src" path="vendor/zendframework/zend-db/src">
+	<buildpathentry kind="src" path="vendor/laminas/laminas-db/src">
 		<attributes>
 			<attribute name="composer" value="vendor"/>
 		</attributes>
 	</buildpathentry>
-	<buildpathentry kind="src" path="vendor/zendframework/zend-router/src">
+	<buildpathentry kind="src" path="vendor/laminas/laminas-router/src">
 		<attributes>
 			<attribute name="composer" value="vendor"/>
 		</attributes>
 	</buildpathentry>
 	<buildpathentry kind="con" path="org.eclipse.php.core.LANGUAGE"/>
-	<buildpathentry kind="src" path="vendor/zendframework/zend-form/src">
+	<buildpathentry kind="src" path="vendor/laminas/laminas-form/src">
 		<attributes>
 			<attribute name="composer" value="vendor"/>
 		</attributes>
 	</buildpathentry>
-	<buildpathentry kind="src" path="vendor/zendframework/zend-http/src">
+	<buildpathentry kind="src" path="vendor/laminas/laminas-http/src">
 		<attributes>
 			<attribute name="composer" value="vendor"/>
 		</attributes>
@@ -91,27 +91,27 @@
 			<attribute name="composer" value="source"/>
 		</attributes>
 	</buildpathentry>
-	<buildpathentry kind="src" path="vendor/zendframework/zend-view/src">
+	<buildpathentry kind="src" path="vendor/laminas/laminas-view/src">
 		<attributes>
 			<attribute name="composer" value="vendor"/>
 		</attributes>
 	</buildpathentry>
-	<buildpathentry kind="src" path="vendor/zendframework/zend-stdlib/src">
+	<buildpathentry kind="src" path="vendor/laminas/laminas-stdlib/src">
 		<attributes>
 			<attribute name="composer" value="vendor"/>
 		</attributes>
 	</buildpathentry>
-	<buildpathentry kind="src" path="vendor/zendframework/zend-escaper/src">
+	<buildpathentry kind="src" path="vendor/laminas/laminas-escaper/src">
 		<attributes>
 			<attribute name="composer" value="vendor"/>
 		</attributes>
 	</buildpathentry>
-	<buildpathentry kind="src" path="vendor/zendframework/zend-mvc/src">
+	<buildpathentry kind="src" path="vendor/laminas/laminas-mvc/src">
 		<attributes>
 			<attribute name="composer" value="vendor"/>
 		</attributes>
 	</buildpathentry>
-	<buildpathentry kind="src" path="vendor/zendframework/zend-validator/src">
+	<buildpathentry kind="src" path="vendor/laminas/laminas-validator/src">
 		<attributes>
 			<attribute name="composer" value="vendor"/>
 		</attributes>
@@ -121,17 +121,17 @@
 			<attribute name="composer" value="vendor"/>
 		</attributes>
 	</buildpathentry>
-	<buildpathentry kind="src" path="vendor/zendframework/zend-component-installer/src">
+	<buildpathentry kind="src" path="vendor/laminas/laminas-component-installer/src">
 		<attributes>
 			<attribute name="composer" value="vendor"/>
 		</attributes>
 	</buildpathentry>
-	<buildpathentry kind="src" path="vendor/zendframework/zend-eventmanager/src">
+	<buildpathentry kind="src" path="vendor/laminas/laminas-eventmanager/src">
 		<attributes>
 			<attribute name="composer" value="vendor"/>
 		</attributes>
 	</buildpathentry>
-	<buildpathentry kind="src" path="vendor/zendframework/zend-i18n/src">
+	<buildpathentry kind="src" path="vendor/laminas/laminas-i18n/src">
 		<attributes>
 			<attribute name="composer" value="vendor"/>
 		</attributes>
@@ -141,22 +141,22 @@
 			<attribute name="composer" value="source"/>
 		</attributes>
 	</buildpathentry>
-	<buildpathentry kind="src" path="vendor/zendframework/zend-config/src">
+	<buildpathentry kind="src" path="vendor/laminas/laminas-config/src">
 		<attributes>
 			<attribute name="composer" value="vendor"/>
 		</attributes>
 	</buildpathentry>
-	<buildpathentry kind="src" path="vendor/zfcampus/zf-development-mode/src">
+	<buildpathentry kind="src" path="vendor/laminas/laminas-development-mode/src">
 		<attributes>
 			<attribute name="composer" value="vendor"/>
 		</attributes>
 	</buildpathentry>
-	<buildpathentry kind="src" path="vendor/zendframework/zend-inputfilter/src">
+	<buildpathentry kind="src" path="vendor/laminas/laminas-inputfilter/src">
 		<attributes>
 			<attribute name="composer" value="vendor"/>
 		</attributes>
 	</buildpathentry>
-	<buildpathentry kind="src" path="vendor/zendframework/zend-math/src">
+	<buildpathentry kind="src" path="vendor/laminas/laminas-math/src">
 		<attributes>
 			<attribute name="composer" value="vendor"/>
 		</attributes>

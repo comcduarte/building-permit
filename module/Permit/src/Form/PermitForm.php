@@ -1,8 +1,8 @@
 <?php
 namespace Permit\Form;
 
-use Zend\Form\Form;
-use Zend\Form\Element;
+use Laminas\Form\Form;
+use Laminas\Form\Element;
 use Uuid\Model\Uuid;
 
 class PermitForm extends Form

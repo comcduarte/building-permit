@@ -1,7 +1,7 @@
 <?php 
 namespace Permit\Traits;
 
-use Zend\Db\Adapter\Adapter;
+use Laminas\Db\Adapter\Adapter;
 
 trait AdapterTrait
 {

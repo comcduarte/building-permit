@@ -2,8 +2,8 @@
 namespace Permit\Controller\Factory;
 
 use Permit\Controller\ConfigController;
-use Interop\Container\ContainerInterface;
-use Zend\ServiceManager\Factory\FactoryInterface;
+use Psr\Container\ContainerInterface;
+use Laminas\ServiceManager\Factory\FactoryInterface;
 
 class ConfigControllerFactory implements FactoryInterface
 {

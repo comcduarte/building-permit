@@ -7,10 +7,10 @@
 
 namespace Application;
 
-use Zend\Router\Http\Literal;
-use Zend\Router\Http\Segment;
-use Zend\ServiceManager\Factory\InvokableFactory;
-use Zend\Navigation\Service\DefaultNavigationFactory;
+use Laminas\Router\Http\Literal;
+use Laminas\Router\Http\Segment;
+use Laminas\ServiceManager\Factory\InvokableFactory;
+use Laminas\Navigation\Service\DefaultNavigationFactory;
 
 return [
     'router' => [
@@ -40,6 +40,25 @@ return [
     'controllers' => [
         'factories' => [
             Controller\IndexController::class => InvokableFactory::class,
+        ],
+    ],
+    'log' => [
+        'syslogger' => [
+            'writers' => [
+                'syslog' => [
+                    'name' => \Laminas\Log\Writer\Syslog::class,
+                    'options' => [
+                        'application' => 'BUILDING-PERMIT',
+                        'formatter' => [
+                            'name' => \Laminas\Log\Formatter\Simple::class,
+                            'options' => [
+                                'format' => '%priorityName%: %message% %extra%',
+                                'dateTimeFormat' => 'c',
+                            ],
+                        ],
+                    ],
+                ],
+            ],
         ],
     ],
     'navigation' => [

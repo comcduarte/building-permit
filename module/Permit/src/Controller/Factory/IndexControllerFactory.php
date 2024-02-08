@@ -2,8 +2,8 @@
 namespace Permit\Controller\Factory;
 
 use Permit\Controller\IndexController;
-use Interop\Container\ContainerInterface;
-use Zend\ServiceManager\Factory\FactoryInterface;
+use Psr\Container\ContainerInterface;
+use Laminas\ServiceManager\Factory\FactoryInterface;
 
 class IndexControllerFactory implements FactoryInterface
 {
@@ -11,6 +11,7 @@ class IndexControllerFactory implements FactoryInterface
     {
         $controller = new IndexController();
         $controller->setAdapter($container->get('model-primary-adapter'));
+        $controller->setLogger($container->get('syslogger'));
         return $controller;
     }
 }

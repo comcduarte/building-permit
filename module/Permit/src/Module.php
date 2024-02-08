@@ -1,7 +1,10 @@
 <?php
 namespace Permit;
 
-use Zend\Db\Adapter\Adapter;
+use Laminas\Db\Adapter\Adapter;
+use Laminas\EventManager\LazyListenerAggregate;
+use Laminas\Mvc\MvcEvent;
+use Permit\Listener\PermitListener;
 
 class Module
 {
@@ -21,4 +24,5 @@ class Module
             ]
         ];
     }
+
 }

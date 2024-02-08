@@ -1,14 +1,14 @@
 <?php 
 namespace Permit\Controller;
 
-use Zend\Mvc\Controller\AbstractActionController;
+use Laminas\Mvc\Controller\AbstractActionController;
 use Permit\Traits\AdapterTrait;
-use Zend\Db\Sql\Ddl\CreateTable;
+use Laminas\Db\Sql\Ddl\CreateTable;
 use Permit\Model\Permit;
-use Zend\Db\Sql\Ddl\Column;
-use Zend\Db\Sql\Ddl\Constraint;
-use Zend\Db\Sql\Sql;
-use Zend\Db\Sql\Ddl\DropTable;
+use Laminas\Db\Sql\Ddl\Column;
+use Laminas\Db\Sql\Ddl\Constraint;
+use Laminas\Db\Sql\Sql;
+use Laminas\Db\Sql\Ddl\DropTable;
 
 class ConfigController extends AbstractActionController
 {
@@ -16,7 +16,7 @@ class ConfigController extends AbstractActionController
     
     public function indexAction()
     {
-        return new \Zend\View\Model\ViewModel();
+        return new \Laminas\View\Model\ViewModel();
     }
     
     public function createAction()

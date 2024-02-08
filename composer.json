@@ -1,5 +1,5 @@
 {
-	"name" : "zendframework/skeleton-application",
+	"name" : "laminas/skeleton-application",
 	"description" : "Skeleton Application for Zend Framework zend-mvc applications",
 	"type" : "project",
 	"license" : "BSD-3-Clause",
@@ -12,18 +12,21 @@
 	"minimum-stability" : "dev",
 	"prefer-stable" : true,
 	"require" : {
-		"php" : "^5.6 || ^7.0",
-		"zendframework/zend-component-installer" : "^1.0 || ^0.7 || ^1.0.0-dev@dev",
-		"zendframework/zend-mvc" : "^3.0.1",
-		"zfcampus/zf-development-mode" : "^3.0",
-		"zendframework/zend-navigation" : "*",
-		"zendframework/zend-mvc-plugin-flashmessenger" : "*",
-		"zendframework/zend-db" : "*",
-		"zendframework/zend-i18n" : "*",
-		"zendframework/zend-inputfilter" : "*",
-		"zendframework/zend-session" : "*",
-		"zendframework/zend-form" : "2.12.0",
-		"zendframework/zend-math" : "*"
+		"php" : "^8.0 || ^8.1",
+		"laminas/laminas-component-installer" : "*",
+		"laminas/laminas-mvc" : "*",
+		"laminas/laminas-development-mode" : "*",
+		"laminas/laminas-navigation" : "*",
+		"laminas/laminas-mvc-plugin-flashmessenger" : "*",
+		"laminas/laminas-db" : "*",
+		"laminas/laminas-i18n" : "*",
+		"laminas/laminas-inputfilter" : "*",
+		"laminas/laminas-session" : "*",
+		"laminas/laminas-form" : "*",
+		"laminas/laminas-math" : "*",
+		"laminas/laminas-dependency-plugin" : "*",
+		"laminas/laminas-zendframework-bridge" : "*",
+		"laminas/laminas-log" : "~2.17"
 	},
 	"autoload" : {
 		"psr-4" : {
@@ -40,11 +43,17 @@
 	"scripts" : {
 		"cs-check" : "phpcs",
 		"cs-fix" : "phpcbf",
-		"development-disable" : "zf-development-mode disable",
-		"development-enable" : "zf-development-mode enable",
-		"development-status" : "zf-development-mode status",
+		"development-disable" : "laminas-development-mode disable",
+		"development-enable" : "laminas-development-mode enable",
+		"development-status" : "laminas-development-mode status",
 		"post-create-project-cmd" : "@development-enable",
 		"serve" : "php -S 0.0.0.0:8080 -t public public/index.php",
 		"test" : "phpunit"
+	},
+	"config" : {
+		"allow-plugins" : {
+			"laminas/laminas-component-installer" : true,
+			"laminas/laminas-dependency-plugin" : true
+		}
 	}
 }

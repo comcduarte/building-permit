@@ -1,11 +1,11 @@
 <?php 
 namespace Permit\Model;
 
-use Zend\Filter\StringTrim;
-use Zend\Filter\StripTags;
-use Zend\Validator\EmailAddress;
-use Zend\Validator\Regex;
-use Zend\Validator\Uuid;
+use Laminas\Filter\StringTrim;
+use Laminas\Filter\StripTags;
+use Laminas\Validator\EmailAddress;
+use Laminas\Validator\Regex;
+use Laminas\Validator\Uuid;
 
 class Permit extends PermitObject
 {
@@ -81,7 +81,7 @@ class Permit extends PermitObject
     {
         /**
          * Parent function set all fields to default required state
-         * @var \Zend\InputFilter\InputFilter $inputFilter
+         * @var \Laminas\InputFilter\InputFilter $inputFilter
          */
         $inputFilter = parent::getInputFilter();
         

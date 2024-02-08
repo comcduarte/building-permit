@@ -1,9 +1,11 @@
 <?php 
 namespace Permit;
 
-use Zend\Router\Http\Literal;
-use Zend\Router\Http\Segment;
+use Laminas\Router\Http\Literal;
+use Laminas\Router\Http\Segment;
 use Application\Controller\IndexController as ApplicationController;
+use Permit\Listener\PermitListener;
+use Permit\Listener\Factory\PermitListenerFactory;
 
 return [
     'router' => [
