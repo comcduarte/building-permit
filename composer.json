@@ -12,7 +12,7 @@
 	"minimum-stability" : "dev",
 	"prefer-stable" : true,
 	"require" : {
-		"php" : "^8.0 || ^8.1",
+		"php" : "~8.0.27",
 		"laminas/laminas-component-installer" : "*",
 		"laminas/laminas-mvc" : "*",
 		"laminas/laminas-development-mode" : "*",
@@ -26,7 +26,7 @@
 		"laminas/laminas-math" : "*",
 		"laminas/laminas-dependency-plugin" : "*",
 		"laminas/laminas-zendframework-bridge" : "*",
-		"laminas/laminas-log" : "~2.17"
+		"laminas/laminas-log" : "2.16.1"
 	},
 	"autoload" : {
 		"psr-4" : {
