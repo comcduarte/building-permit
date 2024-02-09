@@ -1,12 +1,12 @@
 <?php 
 namespace Permit\Controller;
 
-use Laminas\Mvc\Controller\AbstractActionController;
-use Permit\Traits\AdapterTrait;
-use Permit\Model\Permit;
-use Permit\Form\PermitForm;
-use Laminas\View\Model\ViewModel;
 use Laminas\Log\LoggerAwareTrait;
+use Laminas\Mvc\Controller\AbstractActionController;
+use Laminas\View\Model\ViewModel;
+use Permit\Form\PermitForm;
+use Permit\Model\Permit;
+use Permit\Traits\AdapterTrait;
 
 class IndexController extends AbstractActionController
 {
@@ -111,10 +111,20 @@ class IndexController extends AbstractActionController
         $uuid = $this->params()->fromRoute('uuid',0);
         $permit = new Permit($this->adapter);
         $permit->read(['UUID'=>$uuid]);
-        $this->logger->info("Permit Read", [$permit]);
         
-        return new ViewModel([
-            'permit' => $permit,
-        ]);
+        if (is_null($permit->MODIFIED_DATE)) {
+            $permit->MODIFIED_DATE = $permit->CREATION_DATE;
+            $permit->update();
+            
+            $this->logger->info("Permit Read", [$permit]);
+            
+            return new ViewModel([
+                'permit' => $permit,
+            ]);
+        } else {
+            $view = new ViewModel();
+            $view = parent::notFoundAction();
+            return $view;
+        }
     }
 }
